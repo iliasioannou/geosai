@@ -1,0 +1,31 @@
+<openlayers ol-center="center" width="100%" height="100%" ol-view="main.view" style="position:fixed" custom-layers="true" ol-defaults="main.olDefaults">
+	<ol-control name="{{control.name}}" ng-repeat="control in main.controls|filter:{active: true}"></ol-control>
+	<!--layer-switcher></layer-switcher-->
+	<ol-layer name="{{baselayer.name}}" ol-layer-properties="baselayer" ng-repeat="baselayer in main.baselayers|filter:{active:true}"></ol-layer>
+	<ol-layer name="{{overlay.name}}" ol-layer-properties="overlay" ng-repeat="overlay in main.overlays|filter:{active:true}"></ol-layer>
+	<ol-marker ol-marker-properties="main.marker"></ol-marker>
+
+	<div ng-include src="'scripts/components/toolbar/toolbar-view.html'"></div>
+	<div ng-include src="'scripts/components/feature-info/feature-info-view.html'"></div>
+	<div ng-include src="'scripts/components/switch-panel/switch-panel-view.html'"></div>
+	<div ng-include src="'scripts/components/mousePosition/mousePosition-view.html'"></div>
+	<div ng-include src="'scripts/components/time-slider/time-slider-view.html'"></div>
+	<div ng-include src="'scripts/components/credits/credits-view.html'"></div>
+
+	<div class="flashMessage" flash-message="5000"></div>
+
+	<!--div class="footer" data-intro="Footer Description" data-position="right"-->
+
+	</div>
+</openlayers>
+<!--div class="FullScreenHelp" data-intro="Full screen" data-position="left"></div-->
+<div class="ZoomControlsHelp" data-intro="Zoom Controls" data-position="left"></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<script type="text/javascript">
+		window.cookieconsent_options = {
+			"message":"This website uses cookies to ensure you get the best experience on our website",
+			"dismiss":"Got it!",
+			"learnMore":"More info",
+			"link":null,
+			"theme":"dark-top"};
+</script>
