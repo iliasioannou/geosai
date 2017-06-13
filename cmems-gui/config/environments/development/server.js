@@ -14,7 +14,7 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://localhost:8081",
-  "GEOSERVER" : "http://localhost:8080"
+  "GEOSERVER" : "http://localhost:9090"
 };
 
 var httpProxy = require('http-proxy');

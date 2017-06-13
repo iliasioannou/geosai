@@ -14,7 +14,7 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
-  "GEOSERVER" : "http://tebe.planetek.it:8080"
+  "GEOSERVER" : "http://localhost:9090"
 };
 
 var httpProxy = require('http-proxy');
@@ -66,6 +66,7 @@ server.all("/rheticusapi*", function(req, res) {
 // Grab all requests to the server with "/geoserver".
 server.all("/geoserver*", function(req, res) {
   console.log("Forwarding Geoserver API requests to: "+req.url);
+  //console.log("-->");
   //console.log(req.headers);
   if (req.headers["authorization"]){
     delete req.headers["authorization"];
