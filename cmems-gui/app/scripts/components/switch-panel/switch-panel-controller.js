@@ -22,16 +22,30 @@ angular.module('rheticus')
 			toggleOverlay(overlay);
 		};
 		var updateSelectionArea = function(position, entities) {
-			angular.forEach(entities, function(subscription, index) {
-				if (position === index) {
+			if (position == 1) {
+				console.log("extent ita");
+			  //var ita_extent =  "{\"coordinates\":[[[7.14111328125,36.89719446989036],[17.95166015625,36.89719446989036],[17.95166015625,45.767522962149876],[7.14111328125,45.767522962149876],[7.14111328125,36.89719446989036]]]}";
+   			var ita_extent = "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[7.14111328125,36.89719446989036],[17.95166015625,36.89719446989036],[17.95166015625,45.767522962149876],[7.14111328125,45.767522962149876],[7.14111328125,36.89719446989036]]]}}]}";
+
+				$scope.setMapViewExtent(
+					"Polygon",
+					ita_extent
+				);
+			} else if (true) {
+					console.log("extent gre");
+					var gr_extent = "{\"coordinates\":[[[18.25,34.84],[28.16,34.84],[28.16,42.4],[18.25,42.4],[18.25,34.84]]]}";
 					$scope.setMapViewExtent(
-						entities[position].geom_geo_json.type,
-						entities[position].geom_geo_json.coordinates
+						"Polygon",
+						gr_extent
 					);
-					$mdSidenav('areaMenu').close();
-				}
-			});
+			};
+
+
+
 		};
+
+
+
 
 		/**
 		 * EXPORT AS PUBLIC CONTROLLER
@@ -41,6 +55,7 @@ angular.module('rheticus')
 			"chl" : $scope.getOverlayParams("chl"),
 			"sst" : $scope.getOverlayParams("sst"),
 			"wt" : $scope.getOverlayParams("wt"),
+			"tur" : $scope.getOverlayParams("tur"),
 			"userDeals" : $scope.getUserDeals(),
 		});
 		angular.extend(self,{
@@ -55,6 +70,9 @@ angular.module('rheticus')
 			"settingssst":false,
 			//wt
 			"view_overlay_wt" : self.wt.visible,   // overlay visibility
+			"settingsCatalog":false,
+			//tur
+			"view_overlay_tur" : self.tur.visible,   // overlay visibility
 			"settingsCatalog":false,
 		});
 
@@ -72,9 +90,11 @@ angular.module('rheticus')
 			self.view_overlay_chl = false;
 			self.view_overlay_sst = false;
 			self.view_overlay_wt = false;
+			self.view_overlay_tur = false;
 			self.chl.visible = false;
 			self.sst.visible = false;
 			self.wt.visible = false;
+			self.tur.visible = false;
 			eval("self.view_overlay_"+overlay+" = !self.view_overlay_"+overlay+";"); // jshint ignore:line
 			eval("self."+overlay+".visible = self.view_overlay_"+overlay+";"); // jshint ignore:line
 			document.getElementById('imageLegend').src=eval("self."+overlay+".source.legend;"); // jshint ignore:line
@@ -83,6 +103,7 @@ angular.module('rheticus')
 			self.show_panel_sst = false;
 			self.show_panel_wt = false;
 			self.show_panel_chl = false;
+			self.show_panel_tur = false;
 			eval("self.show_panel_"+panel+" = true;"); // jshint ignore:line
 		};
 	}]);

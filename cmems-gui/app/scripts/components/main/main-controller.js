@@ -73,6 +73,7 @@ angular.module('rheticus')
 				});
 			}
 		};
+
 		//Getter overlay ols parameters
 		var getOverlayParams = function(id){
 			return getOverlay("overlays",id);

@@ -41,6 +41,7 @@ angular.module('rheticus')
 				"chl" : $scope.getOverlayParams("chl"),
 				"sst" : $scope.getOverlayParams("sst"),
 				"wt" : $scope.getOverlayParams("wt"),
+				"tur" : $scope.getOverlayParams("tur"),
 				"maxSlider": 0,
 				"minSlider": 0,
 				"nameTimeSlider": "",
@@ -84,7 +85,7 @@ angular.module('rheticus')
 
 	// //update values on login change status
 	// $rootScope.$watch("login.details", function () {
-	// 		
+	//
 	// });
 
 	//WATCH SST

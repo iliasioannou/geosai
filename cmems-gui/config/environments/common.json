@@ -35,7 +35,7 @@
 		"urlReverse" : "http://nominatim.openstreetmap.org/reverse?"
 	},
 	"marineService" : {
-		"catalog" : "http://saimon-catalog.rheticus.eu/geonetwork/srv/eng/catalog.search#/home",
+		"catalog" : "http://cmems-catalog.rheticus.eu/geonetwork/srv/eng/catalog.search#/home",
 		"help" : "./pdf/userguide_Marine.pdf"
 	},
 	"CHL" : {
@@ -55,5 +55,11 @@
 		"tenDaysSlider":"WT10",
 		"monthSlider":"WT30",
 		"month90Slider":"WT30P"
+	},
+	"TUR" : {
+		"dailySlider":"TUR",
+		"tenDaysSlider":"TUR10",
+		"monthSlider":"TUR30",
+		"month90Slider":"TUR30P"
 	}
 }
