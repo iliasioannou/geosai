@@ -24,23 +24,21 @@ angular.module('rheticus')
 		var updateSelectionArea = function(position, entities) {
 			if (position == 1) {
 				console.log("extent ita");
-			  //var ita_extent =  "{\"coordinates\":[[[7.14111328125,36.89719446989036],[17.95166015625,36.89719446989036],[17.95166015625,45.767522962149876],[7.14111328125,45.767522962149876],[7.14111328125,36.89719446989036]]]}";
-   			var ita_extent = "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[7.14111328125,36.89719446989036],[17.95166015625,36.89719446989036],[17.95166015625,45.767522962149876],[7.14111328125,45.767522962149876],[7.14111328125,36.89719446989036]]]}}]}";
-
+			  var ita_extent =  [13,41];
 				$scope.setMapViewExtent(
 					"Polygon",
-					ita_extent
+					ita_extent,
+					6
 				);
 			} else if (true) {
 					console.log("extent gre");
-					var gr_extent = "{\"coordinates\":[[[18.25,34.84],[28.16,34.84],[28.16,42.4],[18.25,42.4],[18.25,34.84]]]}";
+					var gr_extent = [25,38];
 					$scope.setMapViewExtent(
 						"Polygon",
-						gr_extent
+						gr_extent,
+						7
 					);
 			};
-
-
 
 		};
 

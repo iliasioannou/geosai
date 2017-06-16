@@ -63,13 +63,16 @@ angular.module('rheticus')
 			$scope.center.zoom = (center.zoom && !isNaN(center.zoom)) ? center.zoom : $scope.center.zoom;
 		};
 		// Setter map view extent on GeoJSON bounds
-		var setMapViewExtent = function(geometryType,geoJSON){
+		var setMapViewExtent = function(geometryType,geoJSON,zoom){
 			if (geometryType && (geometryType!=="") && geoJSON && (geoJSON!==null)){
-				var geom = eval("new ol.geom."+geometryType+"(geoJSON);"); // jshint ignore:line
+				//geoJSON = [12,42];
+				var geom = eval("new ol.geom.Point(geoJSON);"); // jshint ignore:line
+				//var geom = eval("new ol.geom."+geometryType+"(geoJSON);"); // jshint ignore:line
 				var extent = geom.getExtent();
 				extent = ol.extent.applyTransform(extent, ol.proj.getTransform("EPSG:4326", configuration.map.view.projection)); // jshint ignore:line
 				olData.getMap().then(function (map) {
 					map.getView().fit(extent, map.getSize());
+					map.getView().setZoom(zoom);
 				});
 			}
 		};
