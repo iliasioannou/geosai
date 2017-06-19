@@ -14,7 +14,8 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
-  "GEOSERVER" : "http://cmems_geoserver:9090"
+  "GEOSERVER" : "http://cmems_geoserver:9090",
+  "GEONETWORK" : "http://cmems_geonetwork:8080"
 };
 
 var httpProxy = require('http-proxy');
@@ -79,7 +80,20 @@ server.all("/geoserver*", function(req, res) {
 	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.GEOSERVER});
 });
 
-
+// Grab all requests to the server with "/geonetwork".
+server.all("/geonetwork*", function(req, res) {
+  console.log("Forwarding Geonetwork API requests to: "+req.url);
+  //console.log(req.headers);
+  if (req.headers["authorization"]){
+    delete req.headers["authorization"];
+  }
+  if (req.headers["upgrade-insecure-requests"]){
+    delete req.headers["upgrade-insecure-requests"];
+  }
+  //console.log(req.headers);
+  //res.removeHeader("WWW-Authenticate");
+	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.GEONETWORK});
+});
 /*
  * Start Server.
  */
