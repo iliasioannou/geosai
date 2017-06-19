@@ -32,7 +32,7 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
-  "GEOSERVER" : "http://localhost:9090"
+  "GEOSERVER" : "http://cmems_geoserver:9090"
 };
 
 var httpProxy = require('http-proxy');

@@ -13,6 +13,7 @@ angular
 		CHL : @@CHL,
 		SST : @@SST,
 		WT : @@WT,
+		TUR : @@TUR,
 		layers : @@layers,
 		rheticusAPI : @@rheticusAPI
 	});

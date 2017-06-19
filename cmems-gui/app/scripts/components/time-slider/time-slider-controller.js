@@ -163,6 +163,32 @@ angular.module('rheticus')
 		}
 
 	});
+	//WATCH TUR
+	$scope.$watch("overlayForWatch[3].visible",function(value){
+			if (value && $scope.layerFound.length>0){
+			//console.log("attivo TUR: "+$scope.overlayForWatch[3].source.params.LAYERS);
+			//SET MENU PERIOD
+			var i =0;
+			var trovato=false;
+			while(i<$scope.layerFound.length && !trovato){
+				if ($scope.layerFound[i].Name==="TUR"){
+					trovato=true;
+					$scope.limitDate=d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length-1]);
+				}
+				i++;
+			}
+			self.currentType='tur',
+			$translate('tur').then(function (translation) {
+				self.currentTypeName = translation;
+			});
+			//UPDATE ALL LAST DATE MENU
+			$scope.updateMenuDate("TUR");
+			//RESTART WITH CURRENT TYPE
+			$scope.restart(self.timeSlider);
+		}
+
+	});
+
 
 	//WATCH CURRENTDATE (MODEL SLIDER) AND UPDATE INTERFACE
   $scope.$watch("currentDate",function(nameLayer){
@@ -391,6 +417,7 @@ angular.module('rheticus')
 						self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 						self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 						self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
+						self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 					}else{
 						//CREATED SIMULATE DATE FOR THE CREATION PRODUCT PROBLEM IN VISUALIZATION
 						var simulateDay=new Date($scope.arrayDataTimeCurrent[$scope.currentDate].getTime());
@@ -398,6 +425,7 @@ angular.module('rheticus')
 						self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
 						self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
 						self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
+						self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
 					}
 
 					if($scope.arrayDataTimeCurrent[$scope.currentDate]!==undefined){
@@ -574,7 +602,7 @@ angular.module('rheticus')
 	          if (layer.get('name') === 'Overlays') {
 							//console.log((layer.getLayers().getArray())[2].get('name'));
 									for (var i = 0; i < (layer.getLayers().getArray()).length; i++) {
-											if((layer.getLayers().getArray())[i].get('name')==='SST' || (layer.getLayers().getArray())[i].get('name')==='WT' || (layer.getLayers().getArray())[i].get('name')==='CHL'){
+											if((layer.getLayers().getArray())[i].get('name')==='SST' || (layer.getLayers().getArray())[i].get('name')==='WT' || (layer.getLayers().getArray())[i].get('name')==='CHL' || (layer.getLayers().getArray())[i].get('name')==='TUR'){
 												var source=(layer.getLayers().getArray())[i].getSource();
 												var params = source.getParams();
 												console.log(source.getParams());
