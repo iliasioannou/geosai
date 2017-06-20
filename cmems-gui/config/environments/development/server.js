@@ -89,12 +89,10 @@ server.all("/geonetwork*", function(req, res) {
   if (req.headers["upgrade-insecure-requests"]){
     delete req.headers["upgrade-insecure-requests"];
   }
-  //console.log(req.headers);
-  //res.removeHeader("WWW-Authenticate");
 	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.GEONETWORK});
 });
 
-server.app("/download*", function(req, res){
+server.all("/download*", function(req, res){
   console.log("Forwarding Nginx API requests to: "+req.url);
   //console.log(req.headers);
   if (req.headers["authorization"]){
@@ -106,7 +104,7 @@ server.app("/download*", function(req, res){
   apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.DOWNLOAD});
 });
 
-server.app("/activiti-rest-explorer*", function(req, res){
+server.all("/activiti-rest-explorer*", function(req, res){
   console.log("Forwarding Activiti rest explorer API requests to: "+req.url);
   //console.log(req.headers);
   if (req.headers["authorization"]){
