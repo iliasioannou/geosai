@@ -33,7 +33,9 @@ server.get('/',function(req, res) {
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
   "GEOSERVER" : "http://cmems_geoserver:9090",
-  "GEONETWORK" : "http://cmems_geonetwork:8080"
+  "GEONETWORK" : "http://cmems_geonetwork:8080",
+  "ACTIVITI": "http://cmems_activiti:9085",
+  "DOWNLOAD": "http://cmems_nginx"
 };
 
 var httpProxy = require('http-proxy');
@@ -110,6 +112,30 @@ server.all("/geonetwork*", function(req, res) {
   //console.log(req.headers);
   //res.removeHeader("WWW-Authenticate");
 	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.GEONETWORK});
+});
+
+server.app("/download*", function(req, res){
+  console.log("Forwarding Nginx API requests to: "+req.url);
+  //console.log(req.headers);
+  if (req.headers["authorization"]){
+    delete req.headers["authorization"];
+  }
+  if (req.headers["upgrade-insecure-requests"]){
+    delete req.headers["upgrade-insecure-requests"];
+  }
+  apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.DOWNLOAD});
+});
+
+server.app("/activiti-rest-explorer*", function(req, res){
+  console.log("Forwarding Activiti rest explorer API requests to: "+req.url);
+  //console.log(req.headers);
+  if (req.headers["authorization"]){
+    delete req.headers["authorization"];
+  }
+  if (req.headers["upgrade-insecure-requests"]){
+    delete req.headers["upgrade-insecure-requests"];
+  }
+  apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.ACTIVITI});
 });
 
 /*
