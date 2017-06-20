@@ -16,7 +16,7 @@ var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
   "GEOSERVER" : "http://geoserver:9090",
   "GEONETWORK" : "http://geonetwork:8080",
-  //"ACTIVITI": "http://cmems_activiti:9085",
+  "ACTIVITI": "http://cmems_activiti:9085",
   "DOWNLOAD": "http://nginx"
 };
 
