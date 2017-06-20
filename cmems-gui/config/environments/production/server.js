@@ -32,10 +32,10 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
 	"RHETICUS_API" : "http://metis.planetek.it:8081",
-  "GEOSERVER" : "http://cmems_geoserver:9090",
-  "GEONETWORK" : "http://cmems_geonetwork:8080",
-  //"ACTIVITI": "http://cmems_activiti:9085",
-  "DOWNLOAD": "http://cmems_nginx"
+  "GEOSERVER" : "http://geoserver:9090",
+  "GEONETWORK" : "http://geonetwork:8080",
+  //"ACTIVITI": "http://activiti:9085",
+  "DOWNLOAD": "http://nginx"
 };
 
 var httpProxy = require('http-proxy');
