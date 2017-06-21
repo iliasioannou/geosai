@@ -96,7 +96,7 @@ angular.module('rheticus')
 			var i =0;
 			var trovato=false;
 			while(i<$scope.layerFound.length && !trovato){
-				if ($scope.layerFound[i].Name==="SST"){
+				if ($scope.layerFound[i].Name.indexOf("SST") !== -1){
 					trovato=true;
 					$scope.limitDate=d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length-1]);
 				}
@@ -121,7 +121,7 @@ angular.module('rheticus')
 			var i =0;
 			var trovato=false;
 			while(i<$scope.layerFound.length && !trovato){
-				if ($scope.layerFound[i].Name==="WT"){
+				if ($scope.layerFound[i].Name.indexOf("WT") !== -1){
 					trovato=true;
 					$scope.limitDate=d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length-1]);
 				}
@@ -146,7 +146,7 @@ angular.module('rheticus')
 			var i =0;
 			var trovato=false;
 			while(i<$scope.layerFound.length && !trovato){
-				if ($scope.layerFound[i].Name==="CHL"){
+				if ($scope.layerFound[i].Name.indexOf("CHL") !== -1){
 					trovato=true;
 					$scope.limitDate=d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length-1]);
 				}
@@ -171,7 +171,7 @@ angular.module('rheticus')
 			var i =0;
 			var trovato=false;
 			while(i<$scope.layerFound.length && !trovato){
-				if ($scope.layerFound[i].Name==="TUR"){
+				if ($scope.layerFound[i].Name.indexOf("TUR") !== -1){
 					trovato=true;
 					$scope.limitDate=d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length-1]);
 				}
@@ -511,7 +511,7 @@ angular.module('rheticus')
 				var i =0;
 				var trovato=false;
 				while(i<$scope.layerFound.length && !trovato){
-					if ($scope.layerFound[i].Name===currentOverlay.source.params.LAYERS){
+					if ($scope.layerFound[i].Name.indexOf(currentOverlay.source.params.LAYERS) !=-1){
 						trovato=true;
 					}
 					i++;
