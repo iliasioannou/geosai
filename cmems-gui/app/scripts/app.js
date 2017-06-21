@@ -56,7 +56,8 @@ angular
 	.run(['$rootScope','$cookies','configuration',
 		function($rootScope,$cookies,configuration) {
 
-			var configurationText = JSON.stringify(configuration).replace(/locationHost/g,document.location.host);
+			//var configurationText = JSON.stringify(configuration).replace(/locationHost/g,document.location.host);
+			var configurationText = JSON.stringify(configuration).replace(/locationHost/g,"marine-cmems.rheticus.eu");
 			var configurationCurrentHost = JSON.parse(configurationText);
 
 			angular.extend($rootScope,{
