@@ -2,9 +2,9 @@
 	"rheticusHeaderImage" : "./images/RheticusLogo.png",
 	"map" : {
 		"center" : {
-			"lon" : 20.40,
-			"lat" : 39.10,
-			"zoom" : 8,
+			"lon" : 20.77,
+			"lat" : 39.78,
+			"zoom" : 6,
 			"bounds": [],
   		"projection": "EPSG:4326"
 		},
@@ -35,7 +35,7 @@
 		"urlReverse" : "http://nominatim.openstreetmap.org/reverse?"
 	},
 	"marineService" : {
-		"catalog" : "http://cmems-catalog.rheticus.eu/geonetwork/srv/eng/catalog.search#/home",
+		"catalog" : "http://marine-cmems.rheticus.eu/geonetwork/srv/eng/catalog.search#/home",
 		"help" : "./pdf/userguide_Marine.pdf"
 	},
 	"CHL" : {
