@@ -56,8 +56,8 @@ angular.module('rheticus')
 			}
 			if(overlayResponse){
 				if (overlayResponse.features && (overlayResponse.features!==null) && (overlayResponse.features.length>0)) {
-					if(overlayResponse.features[0].properties.RED_BAND!==-11 && overlayResponse.features[0].properties.RED_BAND!==-10){
-						self.valueInfo=Math.round(overlayResponse.features[0].properties.RED_BAND*10)/10+" "+overlayResponse.unit ;
+					if(overlayResponse.features[0].properties.GRAY_INDEX!==-11 && overlayResponse.features[0].properties.GRAY_INDEX!==-10){
+						self.valueInfo=Math.round(overlayResponse.features[0].properties.GRAY_INDEX*10)/10+" "+overlayResponse.unit ;
 					}
 					else{
 						console.log("enter");
