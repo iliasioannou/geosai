@@ -72,7 +72,9 @@ $translateProvider.translations('en', {
   'October':'October',
   'November':'November',
   'December':'December',
-  'FOO': 'This is a paragraph'
+  'FOO': 'This is a paragraph',
+  'Adriatic':'Adriatic',
+  'Aegean': 'Aegean'
 });
 
 $translateProvider.translations('gr', {
@@ -143,7 +145,9 @@ $translateProvider.translations('gr', {
     'October':'Οκτώβριος',
     'November':'Νοέμβριος',
     'December':'Δεκέμβριος',
-    'FOO': 'Αυτή είναι μια παράγραφος'
+    'FOO': 'Αυτή είναι μια παράγραφος',
+    'Adriatic':'Αδριατική',
+    'Aegean': 'αιγαίο'
   });
 
   $translateProvider.translations('sq', {
@@ -210,7 +214,9 @@ $translateProvider.translations('gr', {
     'October':'Tetor',
     'November':'Nёntor',
     'December':'Dhjetor',
-    'FOO': 'This is a paragraph'
+    'FOO': 'This is a paragraph',
+    'Adriatic':'Adriatik',
+    'Aegean': 'Egje'
   });
 
 $translateProvider.translations('it', {
@@ -283,7 +289,9 @@ $translateProvider.translations('it', {
   'October':'Ottobre',
   'November':'Novembre',
   'December':'Dicembre',
-  'FOO': 'This is a paragraph'
+  'FOO': 'This is a paragraph',
+  'Adriatic':'Adriatico',
+  'Aegean': 'Egeo'
 });
 
 var determineCurrentLanguage= function () {

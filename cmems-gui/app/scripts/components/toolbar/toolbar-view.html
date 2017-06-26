@@ -122,8 +122,8 @@
         </md-item-content>
       </md-toolbar>
       <div ng-controller="SwitchPanelCtrl as switchpanel" style="margin-top:15px;">
-          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(1,switchpanel.userDeals)">Adriatic</h1>
-          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(2,switchpanel.userDeals)">Aegean</h1>
+          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(1,switchpanel.userDeals)">{{ 'Adriatic' | translate }}</h1>
+          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(2,switchpanel.userDeals)">{{ 'Aegean' | translate }}</h1>
 
 
 
@@ -142,7 +142,7 @@
          <img hide-gt-xs src="images/logo_small.png" alt="Logo" width="25" height="25" style="cursor: pointer;" onclick="window.location.href = 'http://www.rheticus.eu/home/'">
         <!--SERVICE NAME-->
         <span flex="15"></span>
-        <img hide-xs src="images/icons/logo_regular_prova.png" alt="Logo" width="772" height="56" style="cursor: pointer;align:middle" onclick="window.location.href = 'http://marine.copernicus.eu/'">
+        <img hide-xs src="images/icons/logo_regular_prova.png" alt="Logo" width="772" height="55" style="cursor: pointer;align:middle" onclick="window.location.href = 'http://marine.copernicus.eu/'">
 
     <!--RIGHT BUTTON TOOL-->
         <span flex=""></span>
