@@ -13,8 +13,8 @@ server.get('/',function(req, res) {
  * PROXY CONFIGURATION
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
-	"RHETICUS_API" : "http://localhost:3000",
-  "GEOSERVER" : "http://localhost:9090",
+  "RHETICUS_API" : "http://localhost:3000",
+  "GEOSERVER" : "http://geoserver:9090",
   "GEONETWORK" : "http://geonetwork:8080",
   "ACTIVITI": "http://activiti:9085",
   "DOWNLOAD": "http://nginx"
