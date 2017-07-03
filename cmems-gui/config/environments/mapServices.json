@@ -168,7 +168,11 @@
     }
   },
   "rheticusAPI": {
-    "host": "http://locationHost/rheticusapi/api/v1",
+    "host" : "http://locationHost/rheticusapi/api/v1.0.0",
+		"authentication" : "/oauth/token",
+    "userDetails" : "/login",
+    "getAllUsers" : "/users",
+    "getRoles":"/roles",
     "dataset": {
       "path": "/datasets/#datasetid",
       "datasetid": "#datasetid"
@@ -184,11 +188,6 @@
         "date": "data",
         "measure": "measure"
       }
-    },
-    "authentication": {
-      "path": "/authenticate?username=#username&password=#password",
-      "username": "#username",
-      "password": "#password"
     }
   }
 }

@@ -5,7 +5,7 @@ var express = require('express');
 var server = express();
 
 /*** Basic Auth for Production ***/
-/*
+
 var basicAuth = require('basic-auth');
 var usr = "demo";
 var pwd = "displacement";
@@ -18,8 +18,8 @@ var auth = function(req, res, next){
     return res.sendStatus(401);
   }
 }
-*/
-//server.use(auth);
+
+server.use(auth);
 
 server.set('port', 80);
 server.use(express.static(__dirname + '/'));
@@ -31,7 +31,7 @@ server.get('/',function(req, res) {
  * PROXY CONFIGURATION
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
-	"RHETICUS_API" : "http://metis.planetek.it:8081",
+	"RHETICUS_API" : "http://localhost:3000",
   "GEOSERVER" : "http://geoserver:9090",
   "GEONETWORK" : "http://geonetwork:8080",
   "ACTIVITI": "http://activiti:9085",
