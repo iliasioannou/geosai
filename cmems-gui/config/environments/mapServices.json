@@ -172,6 +172,7 @@
 		"authentication" : "/oauth/token",
     "userDetails" : "/login",
     "getAllUsers" : "/users",
+    "addUsers":"/users",
     "getRoles":"/roles",
     "dataset": {
       "path": "/datasets/#datasetid",
