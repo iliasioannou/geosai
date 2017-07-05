@@ -1,0 +1,67 @@
+<md-dialog ng-controller="ProcessingPopupCtrl as procPop" aria-label="Processing Dialog" ng-cloak="" flex="40">
+  <md-content ng-hide="loginPop.getLoginStatus()">
+     <form name="formProcessing" ng-submit="formProcessing.$valid && procPop.addProcessing()" novalidate >
+  			<md-input-container layout="row" layout-align="center">
+  				<h2>{{ 'onDemandProcRequest' | translate }}</h2>
+        </md-input-container>
+
+  			<div style="margin:5px;" layout="row" layout-align="center">
+  				<label>{{ 'procType' | translate }}</label>
+
+          <md-select ng-model="procPop.processingParams.product" name="product" placeholder="Select processing type" required>
+            <md-option ng-value="1">{{ 'chl' | translate }}</md-option>
+            <md-option ng-value="2">{{ 'sst' | translate }}</md-option>
+            <md-option ng-value="3">{{ 'wt' | translate }}</md-option>
+            <md-option ng-value="4">{{ 'tur' | translate }}</md-option>
+          </md-select>
+        </div>
+        <br>
+
+        <div style="margin:5px;" layout="row" layout-align="center">
+  				<label>{{ 'aoi' | translate }}</label>
+
+          <md-select ng-model="procPop.processingParams.aoi" name="aoi" placeholder="Select area of interest" required>
+            <md-option ng-value="1">{{ 'Adriatic' | translate }}</md-option>
+            <md-option ng-value="2">{{ 'Aegean' | translate }}</md-option>
+          </md-select>
+        </div><br>
+
+        <div style="margin:5px;" layout="row" layout-align="center">
+          <label>{{ 'Month' | translate }}</label>
+
+          <img ng-click="procPop.showCalendarView()" src="images/icons/searchDate.png" alt="Logo" width="20" height="20" style="margin-left:10px;margin-right:50px;margin-top:15px;cursor: pointer;">
+          <input type="text" name="startDate" ng-value="procPop.processingParams.startDate | date:'MM-yyyy'" disabled required>
+          <!--pre> {{procPop.processingParams.startDate | date:'MM-yyyy'}}</pre-->
+        </div><br>
+
+        <div style="margin:5px;" layout="row" layout-align="center">
+  				<label>{{ 'MonthInterval' | translate }}</label>
+
+          <md-select ng-model="procPop.processingParams.monthInterval" name="monthInterval" placeholder="Select month interval" required>
+            <md-option ng-value="3">3</md-option>
+            <md-option ng-value="4">4</md-option>
+            <md-option ng-value="6">6</md-option>
+            <md-option ng-value="12">12</md-option>
+          </md-select>
+        </div><br>
+       <md-input-container style="margin:5px;" layout="row" layout-align="center">
+  					<md-button type='submit' ng-disabled="procPop.showLoading" class='md-raised md-primary'>{{ 'buttonSubmitProc' | translate }}</md-button>
+       </md-input-container><br>
+     </form>
+  	 <label ng-show="formProcessing.$submitted && !formProcessing.$valid" style="color:red;display: block;text-align: center;" style="color:red;">{{ 'ErrorCampi' | translate }}</label>
+     <md-progress-linear ng-show="procPop.showLoading" md-mode="indeterminate"></md-progress-linear>
+  </md-content>
+
+  <div hide-xs ng-show="procPop.showCalendar" class="calendarSliderPlayer">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span flex></span>
+        <h2>{{ 'selectDate' | translate }}</h2>
+        <span flex=""></span>
+        <a class="close" ng-click="procPop.showCalendarView()">&times;</a>
+      </div>
+    </md-toolbar>
+    <uib-datepicker ng-model="procPop.processingParams.startDate" datepicker-options="procPop.datepickerOptions" datepicker-append-to-body="true" ng-change="procPop.showCalendarView()" ></uib-datepicker>
+  </div>
+
+</md-dialog>

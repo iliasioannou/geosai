@@ -59,11 +59,6 @@ angular.module('rheticus')
 
 			};
 
-      var piffero = function(){
-        console.log('Piffero');
-        $mdDialog.hide();
-      };
-
       var showAdd = function() {
         $mdDialog.hide();
         $mdDialog.show({

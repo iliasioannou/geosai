@@ -173,6 +173,7 @@
     "userDetails" : "/login",
     "getAllUsers" : "/users",
     "addUsers":"/users",
+    "addProcessing": "/processings",
     "getRoles":"/roles",
     "dataset": {
       "path": "/datasets/#datasetid",
