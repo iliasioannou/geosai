@@ -68,10 +68,10 @@ angular.module('rheticus')
 			"settingssst":false,
 			//wt
 			"view_overlay_wt" : self.wt.visible,   // overlay visibility
-			"settingsCatalog":false,
+			"settingswt":false,
 			//tur
 			"view_overlay_tur" : self.tur.visible,   // overlay visibility
-			"settingsCatalog":false,
+			"settingstur":false
 		});
 
 		//update values on login change status
