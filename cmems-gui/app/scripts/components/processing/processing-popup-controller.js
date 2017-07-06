@@ -22,17 +22,17 @@ angular.module('rheticus')
       }
 
       var calculateDates = function(){
-        let startDate = moment(self.processingParams.startDate).format('YYYY-MM-DD');
-        let endDate = moment(self.processingParams.startDate).add(+self.processingParams.monthInterval, 'month').format('YYYY-MM-DD');
+        var startDate = moment(self.processingParams.startDate).format('YYYY-MM-DD');
+        var endDate = moment(self.processingParams.startDate).add(+self.processingParams.monthInterval, 'month').format('YYYY-MM-DD');
         return [startDate, endDate];
       }
 
       var addProcessing = function(){
         self.showLoading = true;
 
-        let dates = calculateDates();
+        var dates = calculateDates();
 
-        let params = {
+        var params = {
           dates: dates,
           aoi: self.processingParams.aoi,
           product: self.processingParams.product
@@ -43,7 +43,7 @@ angular.module('rheticus')
             //SE TUTTO VA BENE
             self.showLoading = false;
             $mdDialog.hide();
-            let alert = $mdDialog.alert()
+            var alert = $mdDialog.alert()
               .title('Conferma Richiesta')
               .textContent('La richiesta di processamento è stata inviata')
               .ok('Close');
@@ -56,7 +56,7 @@ angular.module('rheticus')
           .error(function (data, status, header, config) {
             self.showLoading = false;
             $mdDialog.hide();
-            let alert = $mdDialog.alert()
+            var alert = $mdDialog.alert()
               .title('Errore')
               .textContent(data.message)
               .ok('Close');

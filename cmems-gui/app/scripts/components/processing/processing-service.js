@@ -12,7 +12,7 @@ angular.module('rheticus')
 		function($http,$rootScope){
 			var service = {};
 
-			let url = $rootScope.configurationCurrentHost.rheticusAPI.host+$rootScope.configurationCurrentHost.rheticusAPI.addProcessing;
+			var url = $rootScope.configurationCurrentHost.rheticusAPI.host+$rootScope.configurationCurrentHost.rheticusAPI.addProcessing;
 
 			service.addProcessing = function(processingParams){
 
