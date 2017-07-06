@@ -2,6 +2,7 @@
 angular.module('rheticus')
 .controller('ToolbarCtrl',function($scope,$rootScope,$translate,$mdSidenav,$mdDialog,Flash) {
 
+  $scope.global = $rootScope;
 
   $scope.changeLanguage = function (langKey) {
     if(langKey==="it"){
@@ -35,6 +36,7 @@ angular.module('rheticus')
   }*/
 
   var alert;
+  var processingAlert;
   $scope.showDialog = function ($event) {
     var parentEl = angular.element(document.querySelector('md-content'));
     alert = $mdDialog.alert({
@@ -46,6 +48,22 @@ angular.module('rheticus')
 
     $mdDialog
       .show( alert )
+      .finally(function() {
+        alert = undefined;
+      });
+  };
+
+  $scope.showProcessingDialog = function ($event) {
+    var parentEl = angular.element(document.querySelector('md-content'));
+    processingAlert = $mdDialog.alert({
+      parent: parentEl,
+      targetEvent: $event,
+      clickOutsideToClose:true,
+      templateUrl:"scripts/components/processing/processing-popup-template.html"
+    });
+
+    $mdDialog
+      .show( processingAlert )
       .finally(function() {
         alert = undefined;
       });

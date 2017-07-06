@@ -47,7 +47,7 @@ angular.module('rheticus')
 
 
 
-			 var clientId = "ispraClient";
+			 var clientId = "cmemsClient";
 			 var clientSecret = "INsb0skEFM";
 			 var authurl = $rootScope.configurationCurrentHost.rheticusAPI.host+$rootScope.configurationCurrentHost.rheticusAPI.authentication+"?"+new Date().getTime();
 			 var postObj={

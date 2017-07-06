@@ -75,7 +75,15 @@ $translateProvider.translations('en', {
   'December':'December',
   'FOO': 'This is a paragraph',
   'Adriatic':'Adriatic',
-  'Aegean': 'Aegean'
+  'Aegean': 'Aegean',
+  'procType': 'Processing Type',
+  'aoi': 'Area of interest',
+  'onDemandProcRequest': 'On Demand Processing Request',
+  'Month': 'Month',
+  'MonthInterval': 'Month interval',
+  'buttonSubmitProc': 'Request Processing',
+  'ErrorCampi': 'Insert all fields',
+  'ProcessingToolbar' : 'Processing on demand'
 });
 
 $translateProvider.translations('gr', {
@@ -149,7 +157,15 @@ $translateProvider.translations('gr', {
     'December':'Δεκέμβριος',
     'FOO': 'Αυτή είναι μια παράγραφος',
     'Adriatic':'Αδριατική',
-    'Aegean': 'αιγαίο'
+    'Aegean': 'αιγαίο',
+    'procType': 'Τύπος επεξεργασίας',
+    'aoi': 'Περιοχή ενδιαφέροντος',
+    'onDemandProcRequest': 'Αίτημα επεξεργασίας κατόπιν αιτήματος',
+    'Month': 'Μήνας',
+    'MonthInterval': 'Μήνας διαστήματος',
+    'buttonSubmitProc': 'Επεξεργασία Αιτήματος',
+    'ErrorCampi': 'Εισαγάγετε όλα τα πεδία',
+    'ProcessingToolbar' : 'Επεξεργασίας κατόπιν αιτήσεως'
   });
 
   $translateProvider.translations('sq', {
@@ -219,7 +235,15 @@ $translateProvider.translations('gr', {
     'December':'Dhjetor',
     'FOO': 'This is a paragraph',
     'Adriatic':'Adriatik',
-    'Aegean': 'Egje'
+    'Aegean': 'Egje',
+    'procType': 'Lloji i përpunimit',
+    'aoi': 'Zona e interesit',
+    'onDemandProcRequest': 'Në kërkesën e përpunimit të kërkesës',
+    'Month': 'Muaj',
+    'MonthInterval': 'Intervali mujor',
+    'buttonSubmitProc': 'Përpunimi i Kërkesës',
+    'ErrorCampi': 'Futni të gjitha fushat',
+    'ProcessingToolbar' : 'Përpunimi sipas kërkesës'
   });
 
 $translateProvider.translations('it', {
@@ -295,7 +319,15 @@ $translateProvider.translations('it', {
   'December':'Dicembre',
   'FOO': 'This is a paragraph',
   'Adriatic':'Adriatico',
-  'Aegean': 'Egeo'
+  'Aegean': 'Egeo',
+  'procType': 'Tipo di processamento',
+  'aoi': 'Area di interesse',
+  'onDemandProcRequest': 'Richiesta di processamento on demand',
+  'Month': 'Mese',
+  'MonthInterval': 'Intervallo mensile',
+  'buttonSubmitProc': 'Richiedi Processamento',
+  'ErrorCampi': 'Inserire tutti i campi',
+  'ProcessingToolbar' : 'Richiesta processing dati'
 });
 
 var determineCurrentLanguage= function () {

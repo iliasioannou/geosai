@@ -146,6 +146,9 @@
         <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"  ng-click="showDialog($event)">
           <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
         </md-button>
+        <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"  ng-click="showProcessingDialog($event)" ng-if="global.login.logged">
+          <md-icon md-svg-src="images/icons/processing.svg" style="color: white;"></md-icon>
+        </md-button>
 
         <!--GEOCODER-->
         <!-- <div style="margin-left:5px;" ng-controller="GeocoderCtrl as geo" >
