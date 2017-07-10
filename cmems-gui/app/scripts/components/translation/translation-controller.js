@@ -15,7 +15,7 @@ $translateProvider.translations('en', {
   'userLogin':'User',
   'passwordLogin':'Password',
   'buttonOnLogin':'Login',
-  'buttonOnRegister':'Registrati',
+  'buttonOnRegister':'Sign up',
   'buttonOffLogin':'Logout',
   'errorLogin':'Not authorized !!!',
   'statusLogin':'You are logged as:',
@@ -83,7 +83,13 @@ $translateProvider.translations('en', {
   'MonthInterval': 'Month interval',
   'buttonSubmitProc': 'Request Processing',
   'ErrorCampi': 'Insert all fields',
-  'ProcessingToolbar' : 'Processing on demand'
+  'ProcessingToolbar' : 'Processing on demand',
+  'Error': 'Error',
+  'ReqConfirm': 'Request Confirmation',
+  'ChkParams': 'Please check your request parameters.',
+  'ProcInExec': 'You cannot start a new processing until a previous one has not been marked as completed.',
+  'ProcOk': 'Processing taken in charge.',
+  'UnexpectedError': 'Unexpected Error.'
 });
 
 $translateProvider.translations('gr', {
@@ -165,7 +171,13 @@ $translateProvider.translations('gr', {
     'MonthInterval': 'Μήνας διαστήματος',
     'buttonSubmitProc': 'Επεξεργασία Αιτήματος',
     'ErrorCampi': 'Εισαγάγετε όλα τα πεδία',
-    'ProcessingToolbar' : 'Επεξεργασίας κατόπιν αιτήσεως'
+    'ProcessingToolbar' : 'Επεξεργασίας κατόπιν αιτήσεως',
+    'Error': 'Λάθος',
+    'ReqConfirm': 'Επιβεβαίωση αιτήματος',
+    'ChkParams': 'Ελέγξτε τις παραμέτρους αιτήσεών σας.',
+    'ProcInExec': 'Δεν μπορείτε να ξεκινήσετε μια νέα επεξεργασία έως ότου δεν έχει επισημανθεί ως ολοκληρωμένη μια προηγούμενη.',
+    'ProcOk': 'Επεξεργασία που έχει αναλάβει.',
+    'UnexpectedError': 'Απρόσμενο σφάλμα.'
   });
 
   $translateProvider.translations('sq', {
@@ -243,7 +255,13 @@ $translateProvider.translations('gr', {
     'MonthInterval': 'Intervali mujor',
     'buttonSubmitProc': 'Përpunimi i Kërkesës',
     'ErrorCampi': 'Futni të gjitha fushat',
-    'ProcessingToolbar' : 'Përpunimi sipas kërkesës'
+    'ProcessingToolbar' : 'Përpunimi sipas kërkesës',
+    'Error': 'Gabim',
+    'ReqConfirm': 'Konfirmo kërkesën',
+    'ChkParams': 'Kontrollo parametrat e kërkesës tënde.',
+    'ProcInExec': 'Nuk mund të filloni një përpunim të ri derisa një e mëparshme nuk është shënuar si e përfunduar.',
+    'ProcOk': 'Përpunimi i marrë në krye.',
+    'UnexpectedError': 'Gabim i papritur.'
   });
 
 $translateProvider.translations('it', {
@@ -327,7 +345,13 @@ $translateProvider.translations('it', {
   'MonthInterval': 'Intervallo mensile',
   'buttonSubmitProc': 'Richiedi Processamento',
   'ErrorCampi': 'Inserire tutti i campi',
-  'ProcessingToolbar' : 'Richiesta processing dati'
+  'ProcessingToolbar' : 'Richiesta processing dati',
+  'Error': 'Errore',
+  'ReqConfirm': 'Conferma Richiesta',
+  'ChkParams': 'Controlla i parametri inviati.',
+  'ProcInExec': 'Non puoi avviare un nuovo processamento fin quando il processamento precedente non è stato concluso.',
+  'ProcOk': 'Processo preso in carico.',
+  'UnexpectedError': 'Errore imprevisto.'
 });
 
 var determineCurrentLanguage= function () {

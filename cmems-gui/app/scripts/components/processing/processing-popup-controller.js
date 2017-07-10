@@ -49,8 +49,8 @@ angular.module('rheticus')
             self.showLoading = false;
             $mdDialog.hide();
             var alert = $mdDialog.alert()
-              .title($filter('translate')('Conferma Richiesta'))
-              .textContent($filter('translate')(data))
+              .title($filter('translate')('ReqConfirm'))
+              .textContent($filter('translate')('ProcOk'))
               .ok('Close');
 
             $mdDialog.show(alert)
@@ -59,11 +59,24 @@ angular.module('rheticus')
               });
           })
           .error(function (data, status, header, config) {
+
+            var message = '';
+            switch(status){
+              case 400:
+                message = 'ChkParams';
+                break;
+              case 409:
+                message = 'ProcInExec'
+                break;
+              default:
+                message = 'UnexpectedError';
+                break;
+            }
             self.showLoading = false;
             $mdDialog.hide();
             var alert = $mdDialog.alert()
               .title($filter('translate')('Error'))
-              .textContent($filter('translate')(data))
+              .textContent($filter('translate')(message))
               .ok('Close');
 
             $mdDialog.show(alert)
