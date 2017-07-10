@@ -8,8 +8,8 @@
  * Processing Popup Controller for rheticus project
  */
 angular.module('rheticus')
- 	.controller('ProcessingPopupCtrl',['$rootScope','$scope','$mdDialog','$http', 'ProcessingService',
-    function($rootScope,$scope,$mdDialog,$http, ProcessingService){
+ 	.controller('ProcessingPopupCtrl',['$rootScope','$scope','$mdDialog','$http', '$filter', 'ProcessingService',
+    function($rootScope,$scope,$mdDialog,$http,$filter,ProcessingService){
 
       var self = this; //this controller
       self.showLoading = false;
@@ -44,8 +44,8 @@ angular.module('rheticus')
             self.showLoading = false;
             $mdDialog.hide();
             var alert = $mdDialog.alert()
-              .title('Conferma Richiesta')
-              .textContent('La richiesta di processamento è stata inviata')
+              .title($filter('translate')('Conferma Richiesta'))
+              .textContent($filter('translate')(data))
               .ok('Close');
 
             $mdDialog.show(alert)
@@ -57,8 +57,8 @@ angular.module('rheticus')
             self.showLoading = false;
             $mdDialog.hide();
             var alert = $mdDialog.alert()
-              .title('Errore')
-              .textContent(data.message)
+              .title($filter('translate')('Error'))
+              .textContent($filter('translate')(data))
               .ok('Close');
 
             $mdDialog.show(alert)
