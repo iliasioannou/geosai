@@ -27,15 +27,20 @@ angular.module('rheticus')
         return [startDate, endDate];
       }
 
+      var calculateProducts = function(){
+        return 2**(self.processingParams.product);
+      }
+
       var addProcessing = function(){
         self.showLoading = true;
 
         var dates = calculateDates();
+        var products = calculateProducts();
 
         var params = {
           dates: dates,
           aoi: self.processingParams.aoi,
-          products: self.processingParams.product
+          products: products
         }
 
         ProcessingService.addProcessing(params)
