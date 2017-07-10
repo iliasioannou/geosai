@@ -28,7 +28,7 @@ angular.module('rheticus')
       }
 
       var calculateProducts = function(){
-        return 2**(self.processingParams.product);
+        return Math.pow(2,self.processingParams.product);
       }
 
       var addProcessing = function(){
