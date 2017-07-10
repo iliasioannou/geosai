@@ -35,7 +35,7 @@ angular.module('rheticus')
         let params = {
           dates: dates,
           aoi: self.processingParams.aoi,
-          product: self.processingParams.product
+          products: self.processingParams.product
         }
 
         ProcessingService.addProcessing(params)
