@@ -18,7 +18,6 @@ angular.module('rheticus')
 
 				var postObj = processingParams;
 
-				console.log(postObj);
 				var config = {
 						headers : {
 							'Content-Type': 'application/json;'
