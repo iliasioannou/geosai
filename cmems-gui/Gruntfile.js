@@ -444,13 +444,6 @@ module.exports = function (grunt) {
 					cwd: '.',
 					dest: '<%= yeoman.server_node %>/',
 					src: ['config/environments/'+target+'/package.json','config/environments/'+target+'/server.js']
-				},{
-					expand: true,
-					flatten: true,
-					filter: 'isFile',
-					cwd: '.',
-					dest: '<%= yeoman.server_node %>/',
-					src: ['config/environments/index.html']
 				}],
 				styles: {
 					expand: true,
@@ -492,13 +485,6 @@ module.exports = function (grunt) {
 					cwd: '.',
 					dest: '<%= yeoman.server_node %>/',
 					src: ['config/environments/'+target+'/package.json','config/environments/'+target+'/server.js']
-				},{
-					expand: true,
-					flatten: true,
-					filter: 'isFile',
-					cwd: '.',
-					dest: '<%= yeoman.server_node %>/',
-					src: ['config/environments/index.html']
 				}]
 			}
 		},

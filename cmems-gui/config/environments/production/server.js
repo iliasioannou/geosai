@@ -24,7 +24,7 @@ server.use(auth);
 server.set('port', 80);
 server.use(express.static(__dirname + '/'));
 server.get('/',function(req, res) {
-  res.sendfile('./index.html');
+  res.sendfile('./cmems/index.html');
 });
 
 /*

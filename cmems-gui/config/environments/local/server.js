@@ -6,7 +6,7 @@ var server = express();
 server.set('port', 8080);
 server.use(express.static(__dirname + '/'));
 server.get('/',function(req, res) {
-    res.sendfile('./index.html');
+    res.sendfile('./cmems/index.html');
 });
 
 /*
