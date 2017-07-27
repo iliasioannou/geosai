@@ -13,7 +13,7 @@ server.get('/',function(req, res) {
  * PROXY CONFIGURATION
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
-	"RHETICUS_API" : "http://marine-cmems.rheticus.eu/rheticusapi",
+  "RHETICUS_API" : "http://marine-cmems.rheticus.eu/rheticusapi",
   "GEOSERVER" : "http://marine-cmems.rheticus.eu",
   "GEONETWORK" : "http://marine-cmems.rheticus.eu",
   "ACTIVITI": "http://marine-cmems.rheticus.eu",
