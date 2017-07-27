@@ -247,11 +247,24 @@ angular.module('rheticus')
 								completeLayer.push(arrayLayers[i].childNodes[j].childNodes[0].data);
 							}
 						}
-						if(completeLayer.length===2){
+						if(completeLayer.length===2 && completeLayer[0].indexOf("10")===-1 && completeLayer[0].indexOf("30")===-1){
 							var values = completeLayer[1].split(',');
 							var arrayDate=[];
 							for(var k =0;k<values.length;k++){
 								arrayDate.push(new Date(values[k]));
+							}
+							$scope.layerFound.push({
+								"Name":completeLayer[0],
+								"Dimension":arrayDate,
+							});
+						}else if (completeLayer.length===2 && (completeLayer[0].indexOf("10")>-1 || completeLayer[0].indexOf("30")>-1)) {
+							var values = completeLayer[1].split(',');
+							var arrayDate=[];
+							var tempDate;
+							for(var k =0;k<values.length;k++){
+								tempDate=new Date(values[k]);
+								tempDate.setDate(tempDate.getDate()-2);
+								arrayDate.push(tempDate);
 							}
 							$scope.layerFound.push({
 								"Name":completeLayer[0],
