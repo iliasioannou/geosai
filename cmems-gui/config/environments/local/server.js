@@ -13,11 +13,11 @@ server.get('/',function(req, res) {
  * PROXY CONFIGURATION
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
-	"RHETICUS_API" : "http://localhost:3000",
-  "GEOSERVER" : "http://geoserver:9090",
-  "GEONETWORK" : "http://geonetwork:8080",
-  "ACTIVITI": "http://activiti:9085",
-  "DOWNLOAD": "http://nginx"
+	"RHETICUS_API" : "http://marine-cmems.rheticus.eu/rheticusapi",
+  "GEOSERVER" : "http://marine-cmems.rheticus.eu",
+  "GEONETWORK" : "http://marine-cmems.rheticus.eu",
+  "ACTIVITI": "http://marine-cmems.rheticus.eu",
+  "DOWNLOAD": "http://marine-cmems.rheticus.eu"
 };
 
 var httpProxy = require('http-proxy');
