@@ -247,24 +247,11 @@ angular.module('rheticus')
 								completeLayer.push(arrayLayers[i].childNodes[j].childNodes[0].data);
 							}
 						}
-						if(completeLayer.length===2 && completeLayer[0].indexOf("10")===-1 && completeLayer[0].indexOf("30")===-1){
+						if(completeLayer.length===2){
 							var values = completeLayer[1].split(',');
 							var arrayDate=[];
 							for(var k =0;k<values.length;k++){
 								arrayDate.push(new Date(values[k]));
-							}
-							$scope.layerFound.push({
-								"Name":completeLayer[0],
-								"Dimension":arrayDate,
-							});
-						}else if (completeLayer.length===2 && (completeLayer[0].indexOf("10")>-1 || completeLayer[0].indexOf("30")>-1)) {
-							var values = completeLayer[1].split(',');
-							var arrayDate=[];
-							var tempDate;
-							for(var k =0;k<values.length;k++){
-								tempDate=new Date(values[k]);
-								tempDate.setDate(tempDate.getDate()-2);
-								arrayDate.push(tempDate);
 							}
 							$scope.layerFound.push({
 								"Name":completeLayer[0],
@@ -413,28 +400,17 @@ angular.module('rheticus')
 				//console.log("setSlider");
 				if($scope.arrayDataTimeCurrent[$scope.currentDate] instanceof Date ){
 					$rootScope.$broadcast("setOverlaysClosure");
-					var simulateDay;
-					if(self.timeSlider==="dailySlider"){
-						self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-						self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-						self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-						self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-					}else{
-						//CREATED SIMULATE DATE FOR THE CREATION PRODUCT PROBLEM IN VISUALIZATION
-						simulateDay=new Date($scope.arrayDataTimeCurrent[$scope.currentDate].getTime());
-						simulateDay.setDate(simulateDay.getDate()+2);
-						self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
-						self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
-						self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
-						self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")(simulateDay);
-					}
+					
+					self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
+					self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
+					self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
+					self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 
 					if($scope.arrayDataTimeCurrent[$scope.currentDate]!==undefined){
 
 						self.currentTimeSlider=d3.time.format("%d/%m/%Y")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 						
 						if(self.timeSlider==="tenDaysSlider"){
-							self.currentTimeSlider = d3.time.format("%d/%m/%Y")(simulateDay);
 							var previousDate=new Date($scope.arrayDataTimeCurrent[$scope.currentDate].getTime());
 							previousDate.setDate(previousDate.getDate()-10);
 							var fromDate=d3.time.format("%d/%m/%Y")(previousDate);
