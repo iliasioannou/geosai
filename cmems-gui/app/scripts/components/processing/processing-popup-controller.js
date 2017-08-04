@@ -94,6 +94,7 @@ angular.module('rheticus')
 				},
         "datepickerOptions": {
           minMode: "month",
+          minDate: new Date(2017, 6, 25)
         },
         "addProcessing": addProcessing,
   		});
