@@ -89,7 +89,13 @@ $translateProvider.translations('en', {
   'ChkParams': 'Please check your request parameters.',
   'ProcInExec': 'You cannot start a new processing until a previous one has not been marked as completed.',
   'ProcOk': 'Processing taken in charge.',
-  'UnexpectedError': 'Unexpected Error.'
+  'UnexpectedError': 'Unexpected Error.',
+  'SignUpUser': 'Add New User',
+  'Name': 'Name',
+  'Surname': 'Surname',
+  'email': 'Email',
+  'Close': 'Close',
+  'Save': 'Save'
 });
 
 $translateProvider.translations('gr', {
@@ -177,7 +183,13 @@ $translateProvider.translations('gr', {
     'ChkParams': 'Ελέγξτε τις παραμέτρους αιτήσεών σας.',
     'ProcInExec': 'Δεν μπορείτε να ξεκινήσετε μια νέα επεξεργασία έως ότου δεν έχει επισημανθεί ως ολοκληρωμένη μια προηγούμενη.',
     'ProcOk': 'Επεξεργασία που έχει αναλάβει.',
-    'UnexpectedError': 'Απρόσμενο σφάλμα.'
+    'UnexpectedError': 'Απρόσμενο σφάλμα.',
+    'SignUpUser': 'Προσθήκη νέου χρήστη',
+    'Name': 'όνομα',
+    'Surname': 'επώνυμο',
+    'email': 'ταχυδρομείο',
+    'Close': 'κοντά',
+    'Save': 'εκτός'
   });
 
   $translateProvider.translations('sq', {
@@ -261,7 +273,13 @@ $translateProvider.translations('gr', {
     'ChkParams': 'Kontrollo parametrat e kërkesës tënde.',
     'ProcInExec': 'Nuk mund të filloni një përpunim të ri derisa një e mëparshme nuk është shënuar si e përfunduar.',
     'ProcOk': 'Përpunimi i marrë në krye.',
-    'UnexpectedError': 'Gabim i papritur.'
+    'UnexpectedError': 'Gabim i papritur.',
+    'SignUpUser': 'Shto përdorues të ri',
+    'Name': 'Emër',
+    'Surname': 'Mbiemër',
+    'email': 'postë',
+    'Close': 'afër',
+    'Save': 'ruaj'
   });
 
 $translateProvider.translations('it', {
@@ -351,7 +369,13 @@ $translateProvider.translations('it', {
   'ChkParams': 'Controlla i parametri inviati.',
   'ProcInExec': 'Non puoi avviare un nuovo processamento fin quando il processamento precedente non è stato concluso.',
   'ProcOk': 'Processo preso in carico.',
-  'UnexpectedError': 'Errore imprevisto.'
+  'UnexpectedError': 'Errore imprevisto.',
+  'SignUpUser': 'Aggiungi nuovo utente',
+  'Name': 'Nome',
+  'Surname': 'Cognome',
+  'email': 'Email',
+  'Close': 'Chiudi',
+  'Save': 'Salva'
 });
 
 var determineCurrentLanguage= function () {

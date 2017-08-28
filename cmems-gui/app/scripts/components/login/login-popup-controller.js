@@ -66,32 +66,32 @@ angular.module('rheticus')
         clickOutsideToClose:true,
         template: '<md-dialog aria-label="Mango (Fruit)" style="width:500px">'+
           '			<md-input-container layout="row" layout-align="center">'+
-          '				<h3>Aggiungi nuovo utente</h3>'+
+          '				<h3>{{ \'SignUpUser\' | translate }}</h3>'+
           '     </md-input-container>'+
           '<md-content class="md-padding">'+
           '  <form name="userForm">'+
           '    <div layout layout-sm="column">'+
           '      <md-input-container flex>'+
-          '        <label>Username</label>'+
+          '        <label>{{ \'userLogin\' | translate }}</label>'+
           '        <input ng-model="user.username" ng-keyup="clearError()" required>'+
           '      </md-input-container>'+
           '      <md-input-container flex>'+
-          '        <label>Password</label>'+
+          '        <label>{{ \'passwordLogin\' | translate }}</label>'+
           '        <input ng-model="user.password" type="password" ng-keyup="clearError()" minlength="8" required>'+
           '      </md-input-container>'+
           '    </div>'+
           '    <div layout layout-sm="column">'+
           '      <md-input-container flex>'+
-          '        <label>Nome</label>'+
+          '        <label>{{ \'Name\' | translate }}</label>'+
           '        <input ng-model="user.name" ng-keyup="clearError()" required>'+
           '      </md-input-container>'+
           '      <md-input-container flex>'+
-          '        <label>Cognome</label>'+
+          '        <label>{{ \'Surname\' | translate }}</label>'+
           '        <input ng-model="user.surname" ng-keyup="clearError()" required>'+
           '      </md-input-container>'+
           '    </div>'+
           '     <md-input-container flex style="width: 100%">'+
-          '       <label>Email</label>'+
+          '       <label>{{ \'email\' | translate }}</label>'+
           '       <input  ng-keyup="clearError()" required type="email" name="clientEmail" ng-model="user.email"'+
           '       minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />'+
           '      </md-input-container>' +
@@ -101,8 +101,8 @@ angular.module('rheticus')
           '  </md-content>'+
           '  <div class="md-actions" layout="row">'+
           '    <span flex></span>'+
-          '    <md-button ng-click="cancel()"> Chiudi </md-button>'+
-          '    <md-button ng-click="saveUser()" class="md-primary"> Salva </md-button> '+
+          '    <md-button ng-click="cancel()"> {{ \'Close\' | translate }} </md-button>'+
+          '    <md-button ng-click="saveUser()" class="md-primary"> {{ \'Save\' | translate }} </md-button> '+
           '  </div>'+
           '</md-dialog>'
       })
