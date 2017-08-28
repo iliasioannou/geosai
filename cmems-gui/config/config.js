@@ -1,3 +1,7 @@
+//IMPORTANT: this file is GENERATED from grunt-replace task merging the following file:
+// - cmems-gui/config/environments/common.json
+// - cmems-gui/config/environments/mapServices.json
+
 'use strict';
 
 angular
