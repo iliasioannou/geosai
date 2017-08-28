@@ -35,7 +35,7 @@
 		"urlReverse" : "http://nominatim.openstreetmap.org/reverse?"
 	},
 	"marineService" : {
-		"catalog" : "http://marine-cmems.rheticus.eu/geonetwork/srv/eng/catalog.search#/home",
+		"catalog" : "http://marine-cmems-demo.rheticus.eu/geonetwork",
 		"help" : "./pdf/userguide_Marine.pdf"
 	},
 	"CHL" : {
