@@ -5,3 +5,4 @@
 /bower_components
 .editorconfig
 .gitattributes
+/app/scripts/services/config.js
