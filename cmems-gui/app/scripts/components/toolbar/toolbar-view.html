@@ -20,13 +20,13 @@
       </div>
       <div style="margin:10px;">
       	<label>{{ 'basemapSettings' | translate }}</label>
-        <div ng-init="" ng-controller="BasemapPopoupCtrl as basemapPop">
+        <div ng-init="basemapPop.view_osm=true;basemapPop.view_sbm=false" ng-controller="BasemapPopoupCtrl as basemapPop">
       		    <div>
-                  <input type="radio" ng-checked=true ng-click="basemapPop.changeBaseLayerOSM()"/>
+                  <input type="radio" ng-checked="basemapPop.view_osm" ng-click="basemapPop.changeBaseLayerOSM()"/>
                   OpenStreetMap
               </div>
               <div>
-                  <input type="radio" ng-checked=false ng-click="basemapPop.changeBaseLayerSBM()"/>
+                  <input type="radio" ng-checked="basemapPop.view_sbm" ng-click="basemapPop.changeBaseLayerSBM()"/>
                   Satellite Base Map
               </div>
           </div>
