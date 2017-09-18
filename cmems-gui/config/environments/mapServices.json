@@ -8,7 +8,7 @@
           "type": "OSM",
           "crossOrigin": "null"
         },
-        "active": false,
+        "active": true,
         "visible": true,
         "opacity": 1,
         "layerOptions": {
@@ -25,7 +25,7 @@
           "accessToken": "pk.eyJ1IjoicGsyMDE0IiwiYSI6IkRCTHI5Q28ifQ.oA7Qj3tLfqal-RZCRBISPA",
           "crossOrigin": "null"
         },
-        "active": true,
+        "active": false,
         "visible": true,
         "opacity": 1,
         "layerOptions": {
