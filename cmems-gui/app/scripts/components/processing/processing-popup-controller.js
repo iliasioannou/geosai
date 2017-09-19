@@ -14,6 +14,9 @@ angular.module('rheticus')
       var self = this; //this controller
       self.showLoading = false;
 
+      $scope.oggi = new Date();
+      $scope.todayPlus2 = $scope.oggi.setDate($scope.oggi.getDate() + 2);
+
       self.processingParams = {
         aoi: null,
         product: null,
@@ -94,7 +97,8 @@ angular.module('rheticus')
 				},
         "datepickerOptions": {
           minMode: "month",
-          minDate: new Date(2017, 6, 25)
+          minDate: new Date(2017, 6, 25),
+          maxDate: $scope.todayPlus2
         },
         "addProcessing": addProcessing,
   		});
