@@ -15,7 +15,7 @@ angular.module('rheticus')
       self.showLoading = false;
 
       $scope.oggi = new Date();
-      $scope.todayPlus2 = $scope.oggi.setDate($scope.oggi.getDate() + 2);
+      $scope.todayPlus2 = $scope.oggi.setDate($scope.oggi.getDate() - 2);
 
       self.processingParams = {
         aoi: null,
