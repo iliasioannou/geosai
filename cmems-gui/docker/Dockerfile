@@ -1,4 +1,4 @@
-FROM planetek/node-bower-compass-grunt:4
+FROM dockerhub.planetek.it/node-bower-compass-grunt:4
 MAINTAINER Maurizio Cosmai <cosmai@planetek.it>
 ARG branch
 
