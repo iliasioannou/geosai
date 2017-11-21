@@ -1,9 +1,11 @@
 FROM dockerhub.planetek.it/node-bower-compass-grunt:4
-MAINTAINER Maurizio Cosmai <cosmai@planetek.it>
+LABEL maintainer.name="ilias ioannou" \
+      maintainer.email="ioannou@planetek.gr"
+	  
 ARG branch
 
-RUN git clone -b $branch https://teamEreticoTfs:hIEMK-i=d@tfs.planetek.it/SBU-GS/pkz029_UU_CMEMS/_git/pkz029_UU_CMEMS_Web_App
-WORKDIR pkz029_UU_CMEMS_Web_App/cmems-gui
+RUN git clone -b $branch https://teamEreticoTfs:hIEMK-i=d@tfs.planetek.it/Planetek%20Hellas/pkh111_EOSAI/_git/pkh111_EOSAI_Web_App
+WORKDIR pkh111_EOSAI_Web_App/eosai-gui
 RUN npm install
 RUN bower install  --allow-root
 RUN grunt clean build --target=development --verbose
