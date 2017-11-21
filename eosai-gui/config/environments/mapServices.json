@@ -67,7 +67,7 @@
             "crossOrigin": "null",
             "legend": "images/SST_Legend.jpg",
             "urls": [
-              "http://locationHost/geoserver/pkz029_CMEMS/wms"
+              "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
               "LAYERS": "SST",
@@ -93,7 +93,7 @@
             "crossOrigin": "null",
             "legend": "images/WT_Legend.jpg",
             "urls": [
-              "http://locationHost/geoserver/pkz029_CMEMS/wms"
+              "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
               "LAYERS": "WT",
@@ -119,7 +119,7 @@
             "crossOrigin": "null",
             "legend": "images/Chl_Legend.jpg",
             "urls": [
-              "http://locationHost/geoserver/pkz029_CMEMS/wms"
+              "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
               "LAYERS": "CHL",
@@ -146,7 +146,7 @@
             "crossOrigin": "null",
             "legend": "images/TUR_Legend.jpg",
             "urls": [
-              "http://locationHost/geoserver/pkz029_CMEMS/wms"
+              "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
               "LAYERS": "TUR",
