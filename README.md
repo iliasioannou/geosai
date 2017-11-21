@@ -1,4 +1,4 @@
-# CMEMS GUI
+# EOSAI GUI
 In questo file vengono inseriti i comandi per l'uso della webapp
 
 Riferimento Docker : 
