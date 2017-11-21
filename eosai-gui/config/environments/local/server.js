@@ -6,18 +6,18 @@ var server = express();
 server.set('port', 8080);
 server.use(express.static(__dirname + '/'));
 server.get('/',function(req, res) {
-    res.sendfile('./cmems/index.html');
+    res.sendfile('./eosai/index.html');
 });
 
 /*
  * PROXY CONFIGURATION
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
-  "RHETICUS_API" : "http://marine-cmems.rheticus.eu/rheticusapi",
-  "GEOSERVER" : "http://marine-cmems.rheticus.eu",
-  "GEONETWORK" : "http://marine-cmems.rheticus.eu",
-  "ACTIVITI": "http://marine-cmems.rheticus.eu",
-  "DOWNLOAD": "http://marine-cmems.rheticus.eu"
+  "RHETICUS_API" : "http://marine-eosai.rheticus.eu/rheticusapi",
+  "GEOSERVER" : "http://marine-eosai.rheticus.eu",
+  "GEONETWORK" : "http://marine-eosai.rheticus.eu",
+  "ACTIVITI": "http://marine-eosai.rheticus.eu",
+  "DOWNLOAD": "http://marine-eosai.rheticus.eu"
 };
 
 var httpProxy = require('http-proxy');
