@@ -57,9 +57,9 @@ apiProxy.on('error', function (err, req, res) {
   res.end('Something went wrong. And we are reporting a custom error message.');
 });
 
-// Grab all requests to the server with "/rheticusapi".
-server.all("/api*", function(req, res) {
-	req.url = req.url.replace('/api/','');
+// Grab all requests to the server with "/eosapi".
+server.all("/eosapi*", function(req, res) {
+	req.url = req.url.replace('/eosapi/','');
 	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.RHETICUS_API});
 });
 
