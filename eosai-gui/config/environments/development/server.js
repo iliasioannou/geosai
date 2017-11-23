@@ -58,9 +58,8 @@ apiProxy.on('error', function (err, req, res) {
 });
 
 // Grab all requests to the server with "/rheticusapi".
-server.all("/rheticusapi*", function(req, res) {
-	req.url = req.url.replace('/rheticusapi/','');
-	console.log("Forwarding RHETICUS API requests to: "+req.url);
+server.all("/api*", function(req, res) {
+	req.url = req.url.replace('/api/','');
 	apiProxy.web(req, res, {target: HASH_MAP_EXTERNAL_SERVICES.RHETICUS_API});
 });
 
