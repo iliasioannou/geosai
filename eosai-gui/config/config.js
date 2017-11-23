@@ -8,7 +8,7 @@ angular
 	.module('services.config',[])
 	.constant('configuration', {
 		//common environment configuration
-		rheticusHeaderImage : "@@rheticusHeaderImage",
+		eosaiHeaderImage : "@@eosaiHeaderImage",
 		map : @@map,
 		dataProviders : @@dataProviders,
 		geocoder : @@geocoder,
