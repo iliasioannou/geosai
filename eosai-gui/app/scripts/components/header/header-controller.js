@@ -10,6 +10,6 @@
 angular.module('rheticus')
 	.controller('HeaderCtrl',['configuration',function (configuration){
 		angular.extend(this,{
-			"rheticusHeaderImage" : configuration.eosaiHeaderImage
+			"eosaiHeaderImage" : configuration.eosaiHeaderImage
 		});
 	}]);
