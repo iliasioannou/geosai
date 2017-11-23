@@ -168,7 +168,7 @@
     }
   },
   "rheticusAPI": {
-    "host" : "http://locationHost/rheticusapi/api/v1.0.0",
+    "host" : "http://locationHost/eosapi/api/v1.0.0",
 		"authentication" : "/oauth/token",
     "userDetails" : "/login",
     "getAllUsers" : "/users",
