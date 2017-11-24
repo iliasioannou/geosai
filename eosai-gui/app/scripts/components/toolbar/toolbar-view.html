@@ -111,14 +111,11 @@
         </div>
     </md-sidenav>
     <!--MAIN TOOLBAR (TO CHANGE MIN SIZE GO IN ANGULARMATERIAL.CSS)-->
-    <md-toolbar style="height: 105px;min-height: 105px;max-height: 105px; background-color: rgb(2,54,114);">
+    <md-toolbar style="height: 50px;min-height: 50px;max-height: 50px; background-color:rgb(178, 199, 199)">
         <div class="md-toolbar-tools" style="margin-right:0px;padding: 0;">
-            <img hide-xs src="images/icons/logo_regular_prova_eosai.jpg" alt="" width="70%" height="150" style="align:left">
             <!--EOSAI LOGO-->
-            <img src="images/icons/eosai_logo_trasp.png" alt="go back home page" width="150px" height="150px" style="position: absolute; left: 46%; top: 4px;cursor: pointer;"
+            <img src="images/icons/eosai_logo_trasp.png" alt="go back home page" width="130px" height="130px" style="position: fixed;cursor: pointer"
             onclick="window.location.href = 'http://www.planetek.it/rheticus/CMEMS-UU/Med-Sea'">
-            <!--CREDITS -->
-            <img src="images/icons/credits_1.png" width="20%" style="position: absolute; left: 26%; top: 20px;">
             <!--RIGHT BUTTON TOOL-->
             <span flex="15"></span>
             <h4 hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
