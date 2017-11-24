@@ -114,32 +114,32 @@
     <md-toolbar style="height: 50px;min-height: 50px;max-height: 50px; background-color:rgb(0,58,87)">
         <div class="md-toolbar-tools" style="margin-right:0px;padding: 0;">
             <!--EOSAI LOGO-->
-            <img src="images/icons/eosai_logo_trasp.png" alt="go back home page" width="130px" height="130px" style="position: fixed;cursor: pointer"
+            <img src="images/icons/EOSAI_Logo.png" alt="go back home page" width="130px" height="130px" style="position: fixed;cursor: pointer"
             onclick="window.location.href = 'http://www.planetek.it/rheticus/CMEMS-UU/Med-Sea'">
             <div style="position:fixed; right:15px">
-            <!--RIGHT BUTTON TOOL-->
-            <span flex="15"></span>
-            <h4 hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
-            <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"
-            ng-click="showDialog($event)">
-                <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
-            </md-button>
-            <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"
-            ng-click="showProcessingDialog($event)" ng-if="global.login.logged">
-                <md-icon md-svg-src="images/icons/processing.svg" style="color: white;"></md-icon>
-            </md-button>
-            <md-button title="{{ 'filtersToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'filtersToolbar' | translate }}"
-            ng-click="openFilterMenu()">
-                <md-icon md-svg-src="images/icons/filters.svg"></md-icon>
-            </md-button>
-            <md-button title="{{ 'myAreasToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'myAreasToolbar' | translate }}"
-            ng-click="openAreaMenu()">
-                <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
-            </md-button>
-            <md-button title="{{ 'settingsToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'settingsToolbar' | translate }}"
-            ng-click="openSettingMenu()">
-                <md-icon md-svg-src="images/icons/settings.svg"></md-icon>
-            </md-button>
+                <!--RIGHT BUTTON TOOL-->
+                <span flex="15"></span>
+                <h4 hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
+                <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"
+                ng-click="showDialog($event)">
+                    <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
+                </md-button>
+                <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"
+                ng-click="showProcessingDialog($event)" ng-if="global.login.logged">
+                    <md-icon md-svg-src="images/icons/processing.svg" style="color: white;"></md-icon>
+                </md-button>
+                <md-button title="{{ 'filtersToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'filtersToolbar' | translate }}"
+                ng-click="openFilterMenu()">
+                    <md-icon md-svg-src="images/icons/filters.svg"></md-icon>
+                </md-button>
+                <md-button title="{{ 'myAreasToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'myAreasToolbar' | translate }}"
+                ng-click="openAreaMenu()">
+                    <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
+                </md-button>
+                <md-button title="{{ 'settingsToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'settingsToolbar' | translate }}"
+                ng-click="openSettingMenu()">
+                    <md-icon md-svg-src="images/icons/settings.svg"></md-icon>
+                </md-button>
             </div>
         </div>
     </md-toolbar>
