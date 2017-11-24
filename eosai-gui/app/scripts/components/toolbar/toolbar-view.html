@@ -1,166 +1,147 @@
 <div ng-controller="ToolbarCtrl" ng-cloak>
     <!--SETTINGS SIDENAV-->
     <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="settingMenu">
-      <md-toolbar ng-click="openSettingMenu()">
-        <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 130px;">
-              <md-icon  md-svg-src="images/icons/settings.svg"></md-icon>
-              <h1 class="md-toolbar-tools noselect" style="cursor:default;color:#ffffff;">{{ 'settingsToolbar' | translate }}</h1>
-        </md-item-content>
-      </md-toolbar>
-      <div style="margin:10px;">
-      	<label>{{ 'language' | translate }}</label>
-        <div>
-          <img title="{{ 'itFlag' | translate }}" src="images/itFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('it')">
-          <img title="{{ 'enFlag' | translate }}" style="margin-left:10px;" src="images/enFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('en')">
-          <img title="{{ 'grFlag' | translate }}" style="margin-left:10px;" src="images/grFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('gr')">
-          <!--img title="{{ 'sqFlag' | translate }}" style="margin-left:10px;" src="images/alFlag.png" width="33" height="33" style="cursor: pointer;" ng-click="changeLanguage('sq')"-->
-          <!--img title="{{ 'arFlag' | translate }}" style="margin-left:10px;" src="images/arFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('ar')"-->
-          <!--img title="{{ 'frFlag' | translate }}" style="margin-left:10px;" src="images/frFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('fr')"-->
+        <md-toolbar ng-click="openSettingMenu()">
+            <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 130px;">
+                <md-icon md-svg-src="images/icons/settings.svg"></md-icon>
+                <h1 class="md-toolbar-tools noselect" style="cursor:default;color:#ffffff;">{{ 'settingsToolbar' | translate }}</h1>
+            </md-item-content>
+        </md-toolbar>
+        <div style="margin:10px;">
+            <label>{{ 'language' | translate }}</label>
+            <div>
+                <img title="{{ 'itFlag' | translate }}" src="images/itFlag.png" width="30" height="30" style="cursor: pointer;" ng-click="changeLanguage('it')">
+                <img title="{{ 'enFlag' | translate }}" style="margin-left:10px;" src="images/enFlag.png" width="30" height="30" style="cursor: pointer;"
+                ng-click="changeLanguage('en')">
+                <img title="{{ 'grFlag' | translate }}" style="margin-left:10px;" src="images/grFlag.png" width="30" height="30" style="cursor: pointer;"
+                ng-click="changeLanguage('gr')">
+                <!--img title="{{ 'frFlag' | translate }}" style="margin-left:10px;" src="images/frFlag.png" width="30" height="30" style="cursor:
+                pointer;" ng-click="changeLanguage('fr')"-->
+            </div>
         </div>
-      </div>
-      <div style="margin:10px;">
-      	<label>{{ 'basemapSettings' | translate }}</label>
-        <div ng-init="basemapPop.view_osm=true;basemapPop.view_sbm=false" ng-controller="BasemapPopoupCtrl as basemapPop">
-      		    <div>
-                  <input type="radio" ng-checked="basemapPop.view_osm" ng-click="basemapPop.changeBaseLayerOSM()"/>
-                  OpenStreetMap
-              </div>
-              <!--
-              <div>
-                  <input type="radio" ng-checked="basemapPop.view_sbm" ng-click="basemapPop.changeBaseLayerSBM()"/>
-                  Satellite Base Map
-              </div>
-            -->
-          </div>
-          <div ng-controller="marineServiceCtrl as marine">
-            <div >
-              <label>{{ 'CatalogSettings' | translate }}</label>
-              <form>
-                <button type="button" title="{{ 'CatalogSettings' | translate }}" ng-click="marine.openViewer()">
-                  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                </button>
-                {{ 'catalogHelpSettings' | translate }}
-              </form>
+        <div style="margin:10px;">
+            <label>{{ 'basemapSettings' | translate }}</label>
+            <div ng-init="basemapPop.view_osm=true;basemapPop.view_sbm=false" ng-controller="BasemapPopoupCtrl as basemapPop">
+                <div>
+                    <input type="radio" ng-checked="basemapPop.view_osm" ng-click="basemapPop.changeBaseLayerOSM()" />OpenStreetMap</div>
             </div>
-            <div style="margin-top:10px;">
-            <label >{{ 'helpSettings' | translate }}</label>
-            <form>
-              <button type="button" title="{{ 'helpSettings' | translate }}" ng-click="marine.openHelp()">
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-              </button>
-              {{ 'descriptionHelpSettings' | translate }}
-            </form>
+            <div ng-controller="marineServiceCtrl as marine">
+                <div>
+                    <label>{{ 'CatalogSettings' | translate }}</label>
+                    <form>
+                        <button type="button" title="{{ 'CatalogSettings' | translate }}" ng-click="marine.openViewer()">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        </button>{{ 'catalogHelpSettings' | translate }}</form>
+                </div>
+                <div style="margin-top:10px;">
+                    <label>{{ 'helpSettings' | translate }}</label>
+                    <form>
+                        <button type="button" title="{{ 'helpSettings' | translate }}" ng-click="marine.openHelp()">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </button>{{ 'descriptionHelpSettings' | translate }}</form>
+                </div>
             </div>
-          </div>
-      </div>
-
-
-
+        </div>
     </md-sidenav>
-
     <!--FILTERS SIDENAV-->
     <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="filterMenu">
-      <md-toolbar ng-click="openFilterMenu()">
-        <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 130px;">
-              <md-icon  md-svg-src="images/icons/filters.svg"></md-icon>
-              <h1 class="md-toolbar-tools noselect" style="cursor:default;color:#ffffff;">{{ 'filtersToolbar' | translate }}</h1>
-        </md-item-content>
-      </md-toolbar>
-
-      <div  style="margin:20px;"  >
-<!--       	<h4>{{ 'titleFilters' | translate }}</h4> -->
-        <div ng-controller="SwitchPanelCtrl as switchpanel">
-          <label>{{ 'categoriesTitleSettings' | translate }}</label>
-          <form>
-            <div >
-              <div>
-                <input type="radio" ng-click="switchpanel.switchOverlay('chl')" ng-checked ="switchpanel.view_overlay_chl"> {{ 'chl' | translate }}</label>
-                <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;" ng-click="switchpanel.showSettings('chl')" title="{{ 'openSettings' | translate }}">
-              </div>
-              <div style="margin-left:5px;" ng-show="switchpanel.settingschl">
-                <label class= "switchpanelabel2">{{ 'trasparence' | translate }}
-    				    <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.chl.opacity">
-              </div>
-              <div style="margin-top:5px;">
-                <input type="radio" ng-click="switchpanel.switchOverlay('sst')" ng-checked ="switchpanel.view_overlay_sst"> {{ 'sst' | translate }}</label>
-                <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;" ng-click="switchpanel.showSettings('sst')" title="{{ 'openSettings' | translate }}">
-              </div>
-              <div style="margin-left:5px;" ng-show="switchpanel.settingssst">
-                <label class= "switchpanelabel2">{{ 'trasparence' | translate }}
-    				    <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.sst.opacity">
-              </div>
-              <div style="margin-top:5px;">
-                <input type="radio" ng-click="switchpanel.switchOverlay('wt')" ng-checked ="switchpanel.view_overlay_wt"> {{ 'wt' | translate }}</label>
-                <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;" ng-click="switchpanel.showSettings('wt')" title="{{ 'openSettings' | translate }}">
-              </div>
-              <div style="margin-left:5px;" ng-show="switchpanel.settingswt">
-                <label class= "switchpanelabel2">{{ 'trasparence' | translate }}
-    				    <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.wt.opacity">
-              </div>
-              <div style="margin-top:5px;">
-                <input type="radio" ng-click="switchpanel.switchOverlay('tur')" ng-checked ="switchpanel.view_overlay_tur"> {{ 'tur' | translate }}</label>
-                <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;" ng-click="switchpanel.showSettings('tur')" title="{{ 'openSettings' | translate }}">
-              </div>
-              <div style="margin-left:5px;" ng-show="switchpanel.settingstur">
-                <label class= "switchpanelabel2">{{ 'trasparence' | translate }}
-    				    <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.tur.opacity">
-              </div>
-
+        <md-toolbar ng-click="openFilterMenu()">
+            <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 130px;">
+                <md-icon md-svg-src="images/icons/filters.svg"></md-icon>
+                <h1 class="md-toolbar-tools noselect" style="cursor:default;color:#ffffff;">{{ 'filtersToolbar' | translate }}</h1>
+            </md-item-content>
+        </md-toolbar>
+        <div style="margin:20px;">
+            <div ng-controller="SwitchPanelCtrl as switchpanel">
+                <label>{{ 'categoriesTitleSettings' | translate }}</label>
+                <form>
+                    <div>
+                        <div>
+                            <input type="radio" ng-click="switchpanel.switchOverlay('chl')" ng-checked="switchpanel.view_overlay_chl">{{ 'chl' | translate }}</label>
+                            <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
+                            ng-click="switchpanel.showSettings('chl')" title="{{ 'openSettings' | translate }}">
+                        </div>
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingschl">
+                            <label class="switchpanelabel2">{{ 'trasparence' | translate }}
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.chl.opacity">
+                        </div>
+                        <div style="margin-top:5px;">
+                            <input type="radio" ng-click="switchpanel.switchOverlay('sst')" ng-checked="switchpanel.view_overlay_sst">{{ 'sst' | translate }}</label>
+                            <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
+                            ng-click="switchpanel.showSettings('sst')" title="{{ 'openSettings' | translate }}">
+                        </div>
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingssst">
+                            <label class="switchpanelabel2">{{ 'trasparence' | translate }}
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.sst.opacity">
+                        </div>
+                        <div style="margin-top:5px;">
+                            <input type="radio" ng-click="switchpanel.switchOverlay('wt')" ng-checked="switchpanel.view_overlay_wt">{{ 'wt' | translate }}</label>
+                            <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
+                            ng-click="switchpanel.showSettings('wt')" title="{{ 'openSettings' | translate }}">
+                        </div>
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingswt">
+                            <label class="switchpanelabel2">{{ 'trasparence' | translate }}
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.wt.opacity">
+                        </div>
+                        <div style="margin-top:5px;">
+                            <input type="radio" ng-click="switchpanel.switchOverlay('tur')" ng-checked="switchpanel.view_overlay_tur">{{ 'tur' | translate }}</label>
+                            <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
+                            ng-click="switchpanel.showSettings('tur')" title="{{ 'openSettings' | translate }}">
+                        </div>
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingstur">
+                            <label class="switchpanelabel2">{{ 'trasparence' | translate }}
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.tur.opacity">
+                        </div>
+                    </div>
+                </form>
             </div>
-          </form>
         </div>
-
-
-
-      </div>
     </md-sidenav>
-
     <!--AREAS SIDENAV-->
     <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="areaMenu">
-      <md-toolbar ng-click="openAreaMenu()">
-        <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 170px;">
-              <md-icon  md-svg-src="images/icons/areas.svg"></md-icon>
-              <h1 class="md-toolbar-tools noselect" style="float:right;cursor:default;color:#ffffff;">{{ 'myAreasToolbar' | translate }}</h1>
-        </md-item-content>
-      </md-toolbar>
-      <div ng-controller="SwitchPanelCtrl as switchpanel" style="margin-top:15px;">
-          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(1,switchpanel.userDeals)">{{ 'Adriatic' | translate }}</h1>
-          <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(2,switchpanel.userDeals)">{{ 'Aegean' | translate }}</h1>
-      </div>
-
+        <md-toolbar ng-click="openAreaMenu()">
+            <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 170px;">
+                <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
+                <h1 class="md-toolbar-tools noselect" style="float:right;cursor:default;color:#ffffff;">{{ 'myAreasToolbar' | translate }}</h1>
+            </md-item-content>
+        </md-toolbar>
+        <div ng-controller="SwitchPanelCtrl as switchpanel" style="margin-top:15px;">
+            <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(1,switchpanel.userDeals)">{{ 'Adriatic' | translate }}</h1>
+                <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(2,switchpanel.userDeals)">{{ 'Aegean' | translate }}</h1>
+        </div>
     </md-sidenav>
-
-
-
     <!--MAIN TOOLBAR (TO CHANGE MIN SIZE GO IN ANGULARMATERIAL.CSS)-->
     <md-toolbar style="height: 105px;min-height: 105px;max-height: 105px; background-color: rgb(2,54,114);">
-      <div class="md-toolbar-tools" style="margin-right:0px;padding: 0;">
-
-        <img hide-xs src="images/icons/logo_regular_prova_eosai.jpg" alt="" width="70%" height="150" style="align:left">
-    <!--EOSAI LOGO-->
-        <img src="images/icons/eosai_logo_trasp.png" alt="go back home page" width="100px" height="100px" style="position: absolute; left: 46%; top: 4px;cursor: pointer;" onclick="window.location.href = 'http://www.planetek.it/rheticus/CMEMS-UU/Med-Sea'">
-
-    <!--CREDITS -->
-        <img src="images/icons/credits_1.png" width="20%" style="position: absolute; left: 26%; top: 20px;">
-
-    <!--RIGHT BUTTON TOOL-->
-        <span flex="15"></span>
-        <h4 hide-xs id="userNameView"style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
-        <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"  ng-click="showDialog($event)">
-          <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
-        </md-button>
-        <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"  ng-click="showProcessingDialog($event)" ng-if="global.login.logged">
-          <md-icon md-svg-src="images/icons/processing.svg" style="color: white;"></md-icon>
-        </md-button>
-        <md-button title="{{ 'filtersToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'filtersToolbar' | translate }}" ng-click="openFilterMenu()">
-          <md-icon md-svg-src="images/icons/filters.svg"></md-icon>
-        </md-button>
-        <md-button title="{{ 'myAreasToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'myAreasToolbar' | translate }}" ng-click="openAreaMenu()">
-          <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
-        </md-button>
-        <md-button title="{{ 'settingsToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'settingsToolbar' | translate }}" ng-click="openSettingMenu()"  >
-          <md-icon md-svg-src="images/icons/settings.svg"></md-icon>
-        </md-button>
-      </div>
+        <div class="md-toolbar-tools" style="margin-right:0px;padding: 0;">
+            <img hide-xs src="images/icons/logo_regular_prova_eosai.jpg" alt="" width="70%" height="150" style="align:left">
+            <!--EOSAI LOGO-->
+            <img src="images/icons/eosai_logo_trasp.png" alt="go back home page" width="150px" height="150px" style="position: absolute; left: 46%; top: 4px;cursor: pointer;"
+            onclick="window.location.href = 'http://www.planetek.it/rheticus/CMEMS-UU/Med-Sea'">
+            <!--CREDITS -->
+            <img src="images/icons/credits_1.png" width="20%" style="position: absolute; left: 26%; top: 20px;">
+            <!--RIGHT BUTTON TOOL-->
+            <span flex="15"></span>
+            <h4 hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
+            <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"
+            ng-click="showDialog($event)">
+                <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
+            </md-button>
+            <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"
+            ng-click="showProcessingDialog($event)" ng-if="global.login.logged">
+                <md-icon md-svg-src="images/icons/processing.svg" style="color: white;"></md-icon>
+            </md-button>
+            <md-button title="{{ 'filtersToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'filtersToolbar' | translate }}"
+            ng-click="openFilterMenu()">
+                <md-icon md-svg-src="images/icons/filters.svg"></md-icon>
+            </md-button>
+            <md-button title="{{ 'myAreasToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'myAreasToolbar' | translate }}"
+            ng-click="openAreaMenu()">
+                <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
+            </md-button>
+            <md-button title="{{ 'settingsToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'settingsToolbar' | translate }}"
+            ng-click="openSettingMenu()">
+                <md-icon md-svg-src="images/icons/settings.svg"></md-icon>
+            </md-button>
+        </div>
     </md-toolbar>
 </div>
