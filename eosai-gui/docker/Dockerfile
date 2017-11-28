@@ -6,7 +6,8 @@ ARG branch
 
 RUN git clone -b $branch https://teamEreticoTfs:hIEMK-i=d@tfs.planetek.it/Planetek%20Hellas/pkh111_EOSAI/_git/pkh111_EOSAI_Web_App
 WORKDIR pkh111_EOSAI_Web_App/eosai-gui
-RUN npm install
+RUN npm cache clean
+RUN npm install --loglevel=silly
 RUN bower install  --allow-root
 RUN grunt clean build --target=development --verbose
 WORKDIR dist
