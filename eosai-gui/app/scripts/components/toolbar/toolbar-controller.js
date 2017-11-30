@@ -8,7 +8,7 @@ angular.module('rheticus')
     if(langKey==="it"){
       Flash.create("success", "Lingua cambiata con successo.");
     }else if(langKey==="gr"){
-      Flash.create("success", "Γλώσσα άλλαξε με επιτυχία.");
+      Flash.create("success", "Η γλώσσα άλλαξε με επιτυχία.");
     }else if(langKey==="sq"){
       Flash.create("success", "Gjuha ndryshua me sukses.");
     }else{
