@@ -104,10 +104,9 @@
             <img src="images/icons/EOSAI_Logo.png" alt="go back home page" width="130px" height="130px">
             <div style="position:fixed; right:15px">
                 <!--RIGHT BUTTON TOOL-->
-                <span flex="15"></span>
-                <h4 hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</h4>
+                <span hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</span>
                 <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"
-                ng-click="showDialog($event)">
+                ng-click="showDialog($event)" ng-hide="{{$root.userName}}">
                     <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
                 </md-button>
                 <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"
