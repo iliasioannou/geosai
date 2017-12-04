@@ -21,26 +21,34 @@ angular.module('rheticus')
 		var switchOverlay = function(overlay){
 			toggleOverlay(overlay);
 		};
-		var updateSelectionArea = function(position, entities) {
-			if (position == 1) {
-				console.log("extent ita");
-			  var ita_extent =  [13,41];
-				$scope.setMapViewExtent(
-					"Polygon",
-					ita_extent,
-					6
-				);
-			} else if (true) {
-					console.log("extent gre");
-					var gr_extent = [25,38];
-					$scope.setMapViewExtent(
-						"Polygon",
-						gr_extent,
-						7
-					);
-			};
 
-		};
+    var gr_extent = [25,38];
+    $scope.setMapViewExtent(
+      "Polygon",
+      gr_extent,
+      7
+    );
+
+		// var updateSelectionArea = function(position, entities) {
+		// 	if (position == 1) {
+		// 		console.log("extent ita");
+		// 	  var ita_extent =  [13,41];
+		// 		$scope.setMapViewExtent(
+		// 			"Polygon",
+		// 			ita_extent,
+		// 			6
+		// 		);
+		// 	} else if (true) {
+		// 			console.log("extent gre");
+		// 			var gr_extent = [25,38];
+		// 			$scope.setMapViewExtent(
+		// 				"Polygon",
+		// 				gr_extent,
+		// 				7
+		// 			);
+		// 	};
+
+		// };
 
 
 
@@ -58,7 +66,6 @@ angular.module('rheticus')
 		});
 		angular.extend(self,{
 			"switchOverlay" : switchOverlay,
-			"updateSelectionArea" : updateSelectionArea,
 			"showSettings":showSettings,
 			//chl
 			"view_overlay_chl" : self.chl.visible, // overlay visibility

@@ -42,7 +42,7 @@ angular.module('rheticus')
 
         var params = {
           dates: dates,
-          aoi: self.processingParams.aoi,
+          aoi: 1,
           products: products
         }
 
