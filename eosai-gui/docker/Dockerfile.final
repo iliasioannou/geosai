@@ -1,0 +1,15 @@
+ARG branch
+FROM planetek/eosai-gui:$branch
+
+RUN git checkout $branch
+RUN git pull origin $branch
+WORKDIR  eosai-gui
+RUN npm install --loglevel=silly
+RUN bower install  --allow-root
+
+RUN grunt clean build --target=development --verbose
+WORKDIR dist
+
+EXPOSE 8080
+CMD ["node", "server.js"]
+
