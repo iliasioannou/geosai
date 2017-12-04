@@ -22,7 +22,7 @@ angular.module('rheticus')
 			toggleOverlay(overlay);
 		};
 
-    var gr_extent = [19,35];
+    var gr_extent = [18,37];
     $scope.setMapViewExtent(
       "Polygon",
       gr_extent,
