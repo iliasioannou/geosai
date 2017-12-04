@@ -97,19 +97,6 @@
             </div>
         </div>
     </md-sidenav>
-    <!--AREAS SIDENAV-->
-    <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="areaMenu">
-        <md-toolbar ng-click="openAreaMenu()">
-            <md-item-content layout="row" layout-align="center center" style="margin: 0 auto; width: 170px;">
-                <md-icon md-svg-src="images/icons/areas.svg"></md-icon>
-                <h1 class="md-toolbar-tools noselect" style="float:right;cursor:default;color:#ffffff;">{{ 'myAreasToolbar' | translate }}</h1>
-            </md-item-content>
-        </md-toolbar>
-        <div ng-controller="SwitchPanelCtrl as switchpanel" style="margin-top:15px;">
-            <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(1,switchpanel.userDeals)">{{ 'Adriatic' | translate }}</h1>
-                <h3 style="text-indent: 2em;" ng-click="switchpanel.updateSelectionArea(2,switchpanel.userDeals)">{{ 'Aegean' | translate }}</h1>
-        </div>
-    </md-sidenav>
     <!--MAIN TOOLBAR (TO CHANGE MIN SIZE GO IN ANGULARMATERIAL.CSS)-->
     <md-toolbar style="height: 50px;min-height: 50px;max-height: 50px; background-color:rgb(0,58,87)">
         <div class="md-toolbar-tools" style="margin-right:0px;padding: 0;">
