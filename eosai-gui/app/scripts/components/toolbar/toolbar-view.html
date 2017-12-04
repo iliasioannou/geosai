@@ -106,7 +106,7 @@
                 <!--RIGHT BUTTON TOOL-->
                 <span hide-xs id="userNameView" style="font-size:12px;" ng-click="showDialog($event)">{{$root.userName}}</span>
                 <md-button title="{{ 'accountToolbar' | translate }}" class="md-icon-button" aria-label="account"
-                ng-click="showDialog($event)" ng-hide="{{$root.userName}}">
+                ng-click="showDialog($event)" ng-if="!global.login.logged">
                     <md-icon md-svg-src="images/icons/account.svg" style="color: white;"></md-icon>
                 </md-button>
                 <md-button title="{{ 'ProcessingToolbar' | translate }}" class="md-icon-button" aria-label="{{ 'ProcessingToolbar' | translate }}"
