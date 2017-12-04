@@ -29,28 +29,6 @@ angular.module('rheticus')
       7
     );
 
-		// var updateSelectionArea = function(position, entities) {
-		// 	if (position == 1) {
-		// 		console.log("extent ita");
-		// 	  var ita_extent =  [13,41];
-		// 		$scope.setMapViewExtent(
-		// 			"Polygon",
-		// 			ita_extent,
-		// 			6
-		// 		);
-		// 	} else if (true) {
-		// 			console.log("extent gre");
-		// 			var gr_extent = [25,38];
-		// 			$scope.setMapViewExtent(
-		// 				"Polygon",
-		// 				gr_extent,
-		// 				7
-		// 			);
-		// 	};
-
-		// };
-
-
 
 
 		/**
