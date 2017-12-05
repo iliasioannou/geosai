@@ -27,7 +27,7 @@ angular.module('rheticus')
 	 		$scope.currentDate=0;
 	   		$scope.minDate = new Date("2001-01-01");
 	   		$scope.maxDate = new Date("2019-01-01");
-	 		$scope.getDateFromCapabilities("RC_ITA_CHL");
+	 		$scope.getDateFromCapabilities("RC_EOSAI_CHL");
 	 		$scope.countMin=false;
 			$scope.countMax=false;
 		}
