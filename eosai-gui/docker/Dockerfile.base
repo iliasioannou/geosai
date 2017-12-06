@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     ruby-dev
 
 # Install sass and compass gems
-RUN gem install sass --no-ri --no-rdoc && \
+RUN gem install sass --no-ri --no-rdoc -v 3.4.22 && \
     gem install compass --no-ri --no-rdoc
 
 # Install Bower & Grunt
