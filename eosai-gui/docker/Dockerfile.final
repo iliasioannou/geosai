@@ -1,6 +1,6 @@
-ARG branch
-FROM planetek/eosai-gui:$branch
+FROM dockerhub.planetek.it/pkh111_eosai-gui:base
 
+ARG branch
 RUN git checkout $branch
 RUN git pull origin $branch
 WORKDIR  eosai-gui
