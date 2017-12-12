@@ -43,7 +43,7 @@ angular.module('rheticus')
 		var olControls = [
 			//{"name" : 'zoom', "active" : true}, // TBC ...duplicate in view
 			{"name" : 'rotate', "active" : true},
-			{"name" : 'zoomtoextent', "active" : false},
+			{"name" : 'zoomtoextent', "active" : true},
 			//{"name" : 'zoomslider', "active" : true},
 			{"name" : 'scaleline', "active" : true},
 			{"name" : 'attribution', "active" : true},
