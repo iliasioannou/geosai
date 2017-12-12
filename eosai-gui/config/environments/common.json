@@ -2,8 +2,8 @@
 	"eosaiHeaderImage": "./images/EOSAI_Logo.png",
 	"map": {
 		"center": {
-			"lon": 20.77,
-			"lat": 39.78,
+			"lon": 21.28,
+			"lat": 38.32,
 			"zoom": 7,
 			"bounds": [],
 			"projection": "EPSG:4326"
