@@ -58,8 +58,8 @@
     "overlays": {
       "olLayers": [
         {
-          "id": "sst",
-          "name": "SST",
+          "id": "dox",
+          "name": "DOX",
           "group": "Overlays",
           "unit": "°C",
           "source": {
@@ -70,7 +70,7 @@
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
-              "LAYERS": "SST",
+              "LAYERS": "DOX",
               "TIME": "2012-04-01",
               "TILED": true
             }
@@ -84,8 +84,8 @@
           }
         },
         {
-          "id": "wt",
-          "name": "WT",
+          "id": "sal",
+          "name": "SAL",
           "group": "Overlays",
           "unit": "m",
           "source": {
@@ -96,7 +96,7 @@
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
-              "LAYERS": "WT",
+              "LAYERS": "SAL",
               "TIME": "2012-04-01",
               "TILED": true
             }
@@ -110,10 +110,10 @@
           }
         },
         {
-          "id": "chl",
-          "name": "CHL",
+          "id": "tem",
+          "name": "TEM",
           "group": "Overlays",
-          "unit": "mg/m3",
+          "unit": "°C",
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
@@ -122,7 +122,7 @@
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
-              "LAYERS": "CHL",
+              "LAYERS": "TEM",
               "TIME": "2012-04-01",
               "TILED": true
             },
@@ -137,8 +137,8 @@
           }
         },
         {
-          "id": "tur",
-          "name": "TUR",
+          "id": "swh",
+          "name": "SWH",
           "group": "Overlays",
           "unit": "FNU",
           "source": {
@@ -149,7 +149,34 @@
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
             "params": {
-              "LAYERS": "TUR",
+              "LAYERS": "SWH",
+              "TIME": "2012-04-01",
+              "TILED": true
+            },
+            "serverType": "geoserver"
+          },
+          "active": true,
+          "visible": false,
+          "opacity": 0.8,
+          "layerOptions": {
+            "attribution": "",
+            "url": ""
+          }
+        },
+        {
+          "id": "cur",
+          "name": "CUR",
+          "group": "Overlays",
+          "unit": "FNU",
+          "source": {
+            "type": "TileWMS",
+            "crossOrigin": "null",
+            "legend": "images/TUR_Legend.jpg",
+            "urls": [
+              "http://locationHost/geoserver/pkh111_EOSAI/wms"
+            ],
+            "params": {
+              "LAYERS": "CUR",
               "TIME": "2012-04-01",
               "TILED": true
             },

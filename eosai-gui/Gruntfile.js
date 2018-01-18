@@ -309,6 +309,21 @@ module.exports = function (grunt) {
 					src: ['./config/config.js'],
 					dest: '<%= yeoman.app %>/scripts/services/'
 				}]
+			},
+			local:{
+				options: {
+					patterns: [{
+						json: grunt.file.readJSON('./config/environments/common.json')
+					}, {
+						json: grunt.file.readJSON('./config/environments/local/mapServices.json')
+					}]
+				},
+				files: [{
+					expand: true,
+					flatten: true,
+					src: ['./config/config.js'],
+					dest: '<%= yeoman.app %>/scripts/services/'
+				}]
 			}
 		},
 
@@ -536,6 +551,7 @@ module.exports = function (grunt) {
 		}
 		grunt.task.run([
 			'clean:server',
+			'replace:local',
 			'wiredep',
 			'concurrent:server',
 			'autoprefixer:server',

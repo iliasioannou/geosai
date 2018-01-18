@@ -57,40 +57,49 @@
                 <form>
                     <div>
                         <div>
-                            <input type="radio" ng-click="switchpanel.switchOverlay('chl')" ng-checked="switchpanel.view_overlay_chl">{{ 'chl' | translate }}</label>
+                            <input type="radio" ng-click="switchpanel.switchOverlay('tem')" ng-checked="switchpanel.view_overlay_tem">{{ 'tem' | translate }}</label>
                             <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
-                            ng-click="switchpanel.showSettings('chl')" title="{{ 'openSettings' | translate }}">
+                            ng-click="switchpanel.showSettings('tem')" title="{{ 'openSettings' | translate }}">
                         </div>
-                        <div style="margin-left:5px;" ng-show="switchpanel.settingschl">
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingstem">
                             <label class="switchpanelabel2">{{ 'trasparence' | translate }}
-                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.chl.opacity">
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.tem.opacity">
                         </div>
                         <div style="margin-top:5px;">
-                            <input type="radio" ng-click="switchpanel.switchOverlay('sst')" ng-checked="switchpanel.view_overlay_sst">{{ 'sst' | translate }}</label>
+                            <input type="radio" ng-click="switchpanel.switchOverlay('dox')" ng-checked="switchpanel.view_overlay_dox">{{ 'dox' | translate }}</label>
                             <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
-                            ng-click="switchpanel.showSettings('sst')" title="{{ 'openSettings' | translate }}">
+                            ng-click="switchpanel.showSettings('dox')" title="{{ 'openSettings' | translate }}">
                         </div>
-                        <div style="margin-left:5px;" ng-show="switchpanel.settingssst">
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingsdox">
                             <label class="switchpanelabel2">{{ 'trasparence' | translate }}
-                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.sst.opacity">
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.dox.opacity">
                         </div>
                         <div style="margin-top:5px;">
-                            <input type="radio" ng-click="switchpanel.switchOverlay('wt')" ng-checked="switchpanel.view_overlay_wt">{{ 'wt' | translate }}</label>
+                            <input type="radio" ng-click="switchpanel.switchOverlay('sal')" ng-checked="switchpanel.view_overlay_sal">{{ 'sal' | translate }}</label>
                             <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
-                            ng-click="switchpanel.showSettings('wt')" title="{{ 'openSettings' | translate }}">
+                            ng-click="switchpanel.showSettings('sal')" title="{{ 'openSettings' | translate }}">
                         </div>
-                        <div style="margin-left:5px;" ng-show="switchpanel.settingswt">
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingsal">
                             <label class="switchpanelabel2">{{ 'trasparence' | translate }}
-                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.wt.opacity">
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.sal.opacity">
                         </div>
                         <div style="margin-top:5px;">
-                            <input type="radio" ng-click="switchpanel.switchOverlay('tur')" ng-checked="switchpanel.view_overlay_tur">{{ 'tur' | translate }}</label>
+                            <input type="radio" ng-click="switchpanel.switchOverlay('swh')" ng-checked="switchpanel.view_overlay_swh">{{ 'swh' | translate }}</label>
                             <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
-                            ng-click="switchpanel.showSettings('tur')" title="{{ 'openSettings' | translate }}">
+                            ng-click="switchpanel.showSettings('swh')" title="{{ 'openSettings' | translate }}">
                         </div>
-                        <div style="margin-left:5px;" ng-show="switchpanel.settingstur">
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingsswh">
                             <label class="switchpanelabel2">{{ 'trasparence' | translate }}
-                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.tur.opacity">
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.swh.opacity">
+                        </div>
+                        <div style="margin-top:5px;">
+                            <input type="radio" ng-click="switchpanel.switchOverlay('cur')" ng-checked="switchpanel.view_overlay_cur">{{ 'cur' | translate }}</label>
+                            <img src="images/icons/settings_black.svg" alt="Logo" width="20" height="20" style="float:right;margin-top:2px;cursor: pointer;"
+                            ng-click="switchpanel.showSettings('cur')" title="{{ 'openSettings' | translate }}">
+                        </div>
+                        <div style="margin-left:5px;" ng-show="switchpanel.settingscur">
+                            <label class="switchpanelabel2">{{ 'trasparence' | translate }}
+                                <input type="range" min="0" max="1" step="0.01" ng-model="switchpanel.cur.opacity">
                         </div>
                     </div>
                 </form>

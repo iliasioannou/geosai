@@ -34,27 +34,35 @@ angular.module('rheticus')
 		 */
 		angular.extend(self,{
 			"overlays" : $scope.getOverlays(),
-			"chl" : $scope.getOverlayParams("chl"),
-			"sst" : $scope.getOverlayParams("sst"),
-			"wt" : $scope.getOverlayParams("wt"),
-			"tur" : $scope.getOverlayParams("tur"),
+			// "chl" : $scope.getOverlayParams("chl"),
+			// "sst" : $scope.getOverlayParams("sst"),
+			// "wt" : $scope.getOverlayParams("wt"),
+			// "tur" : $scope.getOverlayParams("tur"),
+			"tem": $scope.getOverlayParams("tem"),
+			"dox": $scope.getOverlayParams("dox"),
+			"sal": $scope.getOverlayParams("sal"),
+			"swh": $scope.getOverlayParams("swh"),
+			"cur": $scope.getOverlayParams("cur"),
 			"userDeals" : $scope.getUserDeals(),
 		});
 		angular.extend(self,{
 			"switchOverlay" : switchOverlay,
 			"showSettings":showSettings,
-			//chl
-			"view_overlay_chl" : self.chl.visible, // overlay visibility
-			"settingschl":false,
-			//sst
-			"view_overlay_sst" : self.sst.visible, // overlay visibility
-			"settingssst":false,
-			//wt
-			"view_overlay_wt" : self.wt.visible,   // overlay visibility
-			"settingswt":false,
-			//tur
-			"view_overlay_tur" : self.tur.visible,   // overlay visibility
-			"settingstur":false
+			//tem
+			"view_overlay_tem" : self.tem.visible, // overlay visibility
+			"settingstem":false,
+			//dox
+			"view_overlay_dox" : self.dox.visible, // overlay visibility
+			"settingsdox":false,
+			//sal
+			"view_overlay_sal" : self.sal.visible,   // overlay visibility
+			"settingssal":false,
+			//swh
+			"view_overlay_swh" : self.swh.visible,   // overlay visibility
+			"settingsswh":false,
+			//swh
+			"view_overlay_cur" : self.cur.visible,   // overlay visibility
+			"settingscur":false
 		});
 
 		//update values on login change status
@@ -68,23 +76,26 @@ angular.module('rheticus')
 		 */
 		var toggleOverlay = function(overlay){
 			//disable other overlays and set control to the current
-			self.view_overlay_chl = false;
-			self.view_overlay_sst = false;
-			self.view_overlay_wt = false;
-			self.view_overlay_tur = false;
-			self.chl.visible = false;
-			self.sst.visible = false;
-			self.wt.visible = false;
-			self.tur.visible = false;
+			self.view_overlay_tem = false;
+			self.view_overlay_dox = false;
+			self.view_overlay_sal = false;
+			self.view_overlay_swh = false;
+			self.view_overlay_cur = false;
+			self.tem.visible = false;
+			self.dox.visible = false;
+			self.sal.visible = false;
+			self.swh.visible = false;
+			self.cur.visible = false;
 			eval("self.view_overlay_"+overlay+" = !self.view_overlay_"+overlay+";"); // jshint ignore:line
 			eval("self."+overlay+".visible = self.view_overlay_"+overlay+";"); // jshint ignore:line
 			document.getElementById('imageLegend').src=eval("self."+overlay+".source.legend;"); // jshint ignore:line
 		};
 		var viewPanel = function(panel){
-			self.show_panel_sst = false;
-			self.show_panel_wt = false;
-			self.show_panel_chl = false;
-			self.show_panel_tur = false;
+			self.show_panel_tem = false;
+			self.show_panel_dox = false;
+			self.show_panel_sal = false;
+			self.show_panel_swh = false;
+			self.show_panel_cur = false;
 			eval("self.show_panel_"+panel+" = true;"); // jshint ignore:line
 		};
 	}]);
