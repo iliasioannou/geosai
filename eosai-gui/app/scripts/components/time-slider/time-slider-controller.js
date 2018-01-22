@@ -90,10 +90,11 @@ angular.module('rheticus')
 		});
 
 
-		// //update values on login change status
-		// $rootScope.$watch("login.details", function () {
-		//
-		// });
+		//TODO: da testare
+		//update values on login change status
+		$rootScope.$watch("login.details", function () {
+			$scope.getDateFromCapabilities('TEM');
+		});
 
 		//WATCH DOX
 		$scope.$watch("overlayForWatch[0].visible", function (value) {
@@ -105,7 +106,7 @@ angular.module('rheticus')
 				while (i < $scope.layerFound.length && !trovato) {
 					if ($scope.layerFound[i].Name.indexOf("DOX") !== -1) {
 						trovato = true;
-						$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+						$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 					}
 					i++;
 				}
@@ -130,7 +131,7 @@ angular.module('rheticus')
 				while (i < $scope.layerFound.length && !trovato) {
 					if ($scope.layerFound[i].Name.indexOf("SAL") !== -1) {
 						trovato = true;
-						$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+						$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 					}
 					i++;
 				}
@@ -155,7 +156,7 @@ angular.module('rheticus')
 				while (i < $scope.layerFound.length && !trovato) {
 					if ($scope.layerFound[i].Name.indexOf("TEM") !== -1) {
 						trovato = true;
-						$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+						$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 					}
 					i++;
 				}
@@ -180,7 +181,7 @@ angular.module('rheticus')
 				while (i < $scope.layerFound.length && !trovato) {
 					if ($scope.layerFound[i].Name.indexOf("SWH") !== -1) {
 						trovato = true;
-						$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+						$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 					}
 					i++;
 				}
@@ -205,7 +206,7 @@ angular.module('rheticus')
 				while (i < $scope.layerFound.length && !trovato) {
 					if ($scope.layerFound[i].Name.indexOf("CUR") !== -1) {
 						trovato = true;
-						$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+						$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 					}
 					i++;
 				}
@@ -254,6 +255,7 @@ angular.module('rheticus')
 
 		//CALL GET CAPABILITIES AND WITH JQUERY EXTRACT AN ARRAY WITH ALL LAYER NAME AND DIMENSIONS
 		$scope.getDateFromCapabilities = function (nameLayer) {
+			console.log($rootScope.login.logged);
 			var value;
 			for (var i = 0; i < self.overlays.length; i++) {
 				if (self.overlays[i].visible) {
@@ -283,6 +285,16 @@ angular.module('rheticus')
 								for (var k = 0; k < values.length; k++) {
 									arrayDate.push(new Date(values[k]));
 								}
+
+								//remove dates after N days before today if the user is not logged 
+								if(!$rootScope.login.logged){
+									var maxDayBeforeTodayHistory = $rootScope.configurationCurrentHost.generalSettings.maxDayBeforeTodayHistory;
+									var maxReferenceDate = moment().startOf('day').subtract(5, 'days');
+									arrayDate = arrayDate.filter(function(d){
+										return moment(d).startOf('day').isSameOrBefore(maxReferenceDate);
+									});
+								}
+
 								$scope.layerFound.push({
 									"Name": completeLayer[0],
 									"Dimension": arrayDate,
@@ -297,7 +309,7 @@ angular.module('rheticus')
 							if ($scope.layerFound[i].Name === nameLayer) {
 								//console.log("Found"+$scope.layerFound[i].Name);
 								//RESET ALL
-								$scope.limitDate = d3.time.format("%d/%m/%Y")($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]);
+								$scope.limitDate = d3.time.format("%d/%m/%Y")(getForecastDay($scope.layerFound[i].Dimension[$scope.layerFound[i].Dimension.length - 1]));
 								//console.log($scope.limitDate);
 								//$scope.currentDate = 0;
 								document.getElementById('playButton').src = "images/icons/play.png";
@@ -324,7 +336,7 @@ angular.module('rheticus')
 						}
 
 						console.log('currentDate: ' + $scope.currentDate);
-						setCurrentDate();
+						$scope.setCurrentDate();
 						console.log('currentDate: ' + $scope.currentDate);
 
 					}, function (error) {
@@ -334,7 +346,7 @@ angular.module('rheticus')
 
 		};
 
-		var setCurrentDate = function(){
+		$scope.setCurrentDate = function(){
 			var dates = $scope.arrayDataTime;
 			var today = moment().startOf('day').format();
 			var newCurrentDate = 0;
@@ -355,7 +367,12 @@ angular.module('rheticus')
 				$scope.currentDate = newCurrentDate;
 			}, 0);
 
-		}
+		};
+
+		// gets last updated forecast day given the last date available in forecasts
+		var getForecastDay = function(lastForecastDate){
+			return moment(lastForecastDate).startOf('day').subtract(4, 'days').toDate(); //TODO: parameterize numer of days ??
+		};
 
 		//FILTER LAYER DIMENSION BY USER CONTRACT
 		$scope.filterWMSDate = function () {

@@ -51,7 +51,7 @@ angular.module('rheticus')
 
 			if(document.getElementById('currentTypeName')){
 				self.currentTypeName=document.getElementById('currentTypeName').innerHTML;
-				self.nameTimeSlider=document.getElementById('nameTimeSlider').innerHTML;
+				//self.nameTimeSlider=document.getElementById('nameTimeSlider').innerHTML;
 				self.currentTimeSlider=document.getElementById('currentTimeSlider').innerHTML;
 			}
 			if(overlayResponse){

@@ -315,7 +315,7 @@ module.exports = function (grunt) {
 					patterns: [{
 						json: grunt.file.readJSON('./config/environments/common.json')
 					}, {
-						json: grunt.file.readJSON('./config/environments/local/mapServices.json')
+						json: grunt.file.readJSON('./config/environments/mapServices.json')
 					}]
 				},
 				files: [{

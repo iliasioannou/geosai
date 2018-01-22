@@ -16,7 +16,7 @@
             <div layout="row" layout-align="center center" style="background-color:#003a57;">
               <p style="margin:13px; font-size:15px;font-weight:bold;color:#ffffff;">{{ 'periodSlider' | translate }} {{limitDate}}</p>
             </div>
-            <md-menu-item id="dailyItem" title="{{ 'dailyItemUpdate' | translate }} {{limitDate1}}">
+            <!-- <md-menu-item id="dailyItem" title="{{ 'dailyItemUpdate' | translate }} {{limitDate1}}">
               <md-button ng-click="dailySlider()">
                   <div layout="row">
                     <p flex="">{{ 'dailySlider' | translate }}</p>
@@ -43,7 +43,7 @@
                     <p flex="">{{ 'month90Slider' | translate }}</p>
                   </div>
               </md-button>
-            </md-menu-item>
+            </md-menu-item> -->
 
           </md-menu-content>
         </md-menu>
@@ -56,6 +56,9 @@
           <img src="images/icons/rewind.png" alt="Logo" width="36" height="36" style="cursor: pointer;" ng-click="rewindSlider()">
           <img id="playButton" src="images/icons/play.png" alt="Logo" width="50" height="50" style="margin-left:5px;margin-right:5px;cursor: pointer;" ng-click="playSlider()">
           <img src="images/icons/forward.png" alt="Logo" width="36" height="36" style="cursor: pointer;" ng-click="forwardSlider()">
+
+          <img src="images/icons/home.png" alt="Logo" width="36" height="36" style="cursor: pointer; margin-left:30px" ng-click="setCurrentDate()">
+
         </md-item-content>
       </div>
     </div>
@@ -69,9 +72,9 @@
         <span style="margin-top:5px;color:#ffffff;">{{'Type'|translate}}: </span>
   			<span id="currentTypeName"style="color:#ffffff;">{{timeSlider.currentTypeName}}</span>
         <br>
-        <span style="margin-top:5px;color:#ffffff;">{{'Mode'|translate}}: </span>
+        <!-- <span style="margin-top:5px;color:#ffffff;">{{'Mode'|translate}}: </span>
   			<span id="nameTimeSlider"style="color:#ffffff;">{{timeSlider.nameTimeSlider}}</span>
-        <br>
+        <br> -->
         <span style="margin-top:5px;color:#ffffff;">{{'Date'|translate}}: </span>
         <span id="currentTimeSlider"style="color:#ffffff;">{{timeSlider.currentTimeSliderBox}}</span>
   		</div>
@@ -83,6 +86,9 @@
           <img src="images/icons/rewind.png" alt="Logo" width="36" height="36" style="cursor: pointer;" ng-click="rewindSlider()">
           <img id="playButtonMin" src="images/icons/play.png" alt="Logo" width="50" height="50" style="margin-left:5px;margin-right:5px;cursor: pointer;" ng-click="playSlider()">
           <img src="images/icons/forward.png" alt="Logo" width="36" height="36" style="cursor: pointer;" ng-click="forwardSlider()">
+
+          <img src="images/icons/home.png" alt="Logo" width="36" height="36" style="cursor: pointer; margin-left:30px" ng-click="setCurrentDate()">
+
           <md-menu >
               <md-button aria-label="{{ 'optionsSlider' | translate }}" title="{{ 'optionsSlider' | translate }}" class="md-icon-button" ng-click="$mdOpenMenu($event)">
                 <img id="listTypeButtonMin" src="images/icons/1.png" alt="Logo" width="32" height="32" style="cursor: pointer;margin:-5px" ng-click="">
@@ -91,7 +97,7 @@
                 <div layout="row" layout-align="center center" style="background-color:#003a57;">
                   <p style="margin:13px; font-size:15px;font-weight:bold;color:#ffffff;">{{ 'periodSlider' | translate }} {{limitDate}}</p>
                 </div>
-                <md-menu-item id="dailyItem" title="{{ 'dailyItemUpdate' | translate }} {{limitDate1}}">
+                <!-- <md-menu-item id="dailyItem" title="{{ 'dailyItemUpdate' | translate }} {{limitDate1}}">
                   <md-button ng-click="dailySlider()">
                       <div layout="row">
                         <p flex="">{{ 'dailySlider' | translate }}</p>
@@ -118,7 +124,7 @@
                         <p flex="">{{ 'month90Slider' | translate }}</p>
                       </div>
                   </md-button>
-                </md-menu-item>
+                </md-menu-item> -->
 
               </md-menu-content>
             </md-menu>

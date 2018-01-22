@@ -14,7 +14,7 @@ server.get('/',function(req, res) {
  */
 var HASH_MAP_EXTERNAL_SERVICES = {
   "RHETICUS_API" : "http://marine-eosai.rheticus.eu/rheticusapi",
-  "GEOSERVER" : "http://localhost:8999",
+  "GEOSERVER" : "http://marine-eosai.rheticus.eu",
   "GEONETWORK" : "http://marine-eosai.rheticus.eu",
   "ACTIVITI": "http://marine-eosai.rheticus.eu",
   "DOWNLOAD": "http://marine-eosai.rheticus.eu"

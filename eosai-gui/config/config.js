@@ -19,5 +19,6 @@ angular
 		WT : @@WT,
 		TUR : @@TUR,
 		layers : @@layers,
-		rheticusAPI : @@rheticusAPI
+		rheticusAPI : @@rheticusAPI,
+		generalSettings: @@generalSettings
 	});

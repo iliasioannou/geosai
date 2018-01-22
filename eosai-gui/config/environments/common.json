@@ -61,5 +61,8 @@
 		"tenDaysSlider": "TUR10",
 		"monthSlider": "TUR30",
 		"month90Slider": "TUR30P"
+	},
+	"generalSettings" : {
+		"maxDayBeforeTodayHistory" : 5
 	}
 }
