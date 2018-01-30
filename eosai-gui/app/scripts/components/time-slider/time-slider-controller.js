@@ -94,20 +94,12 @@ angular.module('rheticus')
 		//update values on login change status
 		$rootScope.$watch("login.logged", function (oldValue, newValue) {
 			if(oldValue != newValue){
-				var overlaySelected;
-				if($scope.view_overlay_tem){
-					overlaySelected = 'TEM';
-				} else if ($scope.view_overlay_dox){
-					overlaySelected = 'DOX';
-				} else if ($scope.view_overlay_sal){
-					overlaySelected = 'SAL';
-				} else if ($scope.view_overlay_swh){
-					overlaySelected = 'SWH';
-				} else if ($scope.view_overlay_cur){
-					overlaySelected = 'CUR'
-				}
+
+				var visibleOverlay = $scope.overlayForWatch.filter(function(overlay){
+					return overlay.visible;
+				})[0];
 				
-				$scope.getDateFromCapabilities(overlaySelected);
+				$scope.getDateFromCapabilities(visibleOverlay.name);
 			}
 		});
 
