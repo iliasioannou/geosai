@@ -275,7 +275,7 @@ angular.module('rheticus')
 						var xmlDoc = $.parseXML(result.data);
 						var xml = $(xmlDoc);
 						var arrayLayers = xml.find("Layer");
-						var layerFound = [];
+						$scope.layerFound = [];
 						for (var i = 0; i < arrayLayers.length; i++) {
 							var completeLayer = [];
 							for (var j = 0; j < arrayLayers[i].childNodes.length; j++) {
