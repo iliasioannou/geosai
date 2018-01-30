@@ -371,7 +371,7 @@ angular.module('rheticus')
 
 		// gets last updated forecast day given the last date available in forecasts
 		var getForecastDay = function(lastForecastDate){
-			return moment(lastForecastDate).startOf('day').subtract(4, 'days').toDate(); //TODO: parameterize numer of days ??
+			return moment(lastForecastDate).startOf('day').subtract(3, 'days').toDate(); //TODO: parameterize numer of days ??
 		};
 
 		//FILTER LAYER DIMENSION BY USER CONTRACT
