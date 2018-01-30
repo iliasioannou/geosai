@@ -92,8 +92,8 @@ angular.module('rheticus')
 
 		//TODO: da testare
 		//update values on login change status
-		$rootScope.$watch("login", function (oldValue, newValue) {
-			if(oldValue.logged != newValue.logged){
+		$rootScope.$watch("login.logged", function (oldValue, newValue) {
+			if(oldValue != newValue){
 				var overlaySelected;
 				if($scope.view_overlay_tem){
 					overlaySelected = 'TEM';
