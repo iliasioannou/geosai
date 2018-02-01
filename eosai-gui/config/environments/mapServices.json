@@ -61,11 +61,11 @@
           "id": "dox",
           "name": "DOX",
           "group": "Overlays",
-          "unit": "°C",
+          "unit": "mmol O₂/m³",
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
-            "legend": "images/SST_Legend.jpg",
+            "legend": "images/DOX_Legend.png",
             "urls": [
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
@@ -87,11 +87,11 @@
           "id": "sal",
           "name": "SAL",
           "group": "Overlays",
-          "unit": "m",
+          "unit": "PSU",
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
-            "legend": "images/WT_Legend.jpg",
+            "legend": "images/SAL_Legend.png",
             "urls": [
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
@@ -117,7 +117,7 @@
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
-            "legend": "images/Chl_Legend.jpg",
+            "legend": "images/TEM_Legend.png",
             "urls": [
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
@@ -140,11 +140,11 @@
           "id": "swh",
           "name": "SWH",
           "group": "Overlays",
-          "unit": "FNU",
+          "unit": "m",
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
-            "legend": "images/TUR_Legend.jpg",
+            "legend": "images/SWH_Legend.png",
             "urls": [
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
@@ -167,11 +167,11 @@
           "id": "cur",
           "name": "CUR",
           "group": "Overlays",
-          "unit": "FNU",
+          "unit": "m/s",
           "source": {
             "type": "TileWMS",
             "crossOrigin": "null",
-            "legend": "images/TUR_Legend.jpg",
+            "legend": "images/CUR_Legend.png",
             "urls": [
               "http://locationHost/geoserver/pkh111_EOSAI/wms"
             ],
