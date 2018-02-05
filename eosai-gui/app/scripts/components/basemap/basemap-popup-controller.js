@@ -29,7 +29,7 @@ angular.module('rheticus')
 					$scope.getActiveBaselayer().active=false;
 					self.view_osm=false;
 					self.view_sbm=true;
-					if($scope.center.zoom>7 ){
+					if($scope.center.zoom>8 ){
 						$scope.getBaselayers()[1].active=true;
 					}else {
 						$scope.getBaselayers()[1].active=false;
@@ -42,10 +42,10 @@ angular.module('rheticus')
 		$scope.$watch("center.zoom", function (zoom) {
 			//console.log($scope.getActiveBaselayer());
 			//console.log(zoom);
-			if(zoom>7 && $scope.getActiveBaselayer().name.indexOf("OpenStreetMap")===-1){
+			if(zoom>8 && $scope.getActiveBaselayer().name.indexOf("OpenStreetMap")===-1){
 				$scope.getActiveBaselayer().active=false;
 				$scope.getBaselayers()[1].active=true;
-			}else if(zoom<=7 && $scope.getActiveBaselayer().name.indexOf("OpenStreetMap")===-1){
+			}else if(zoom<=8 && $scope.getActiveBaselayer().name.indexOf("OpenStreetMap")===-1){
 				$scope.getBaselayers()[1].active=false;
 				$scope.getBaselayers()[2].active=true;
 			}

@@ -26,7 +26,7 @@ angular.module('rheticus')
     $scope.setMapViewExtent(
       "Polygon",
       gr_extent,
-      7
+      8
     );
 
 		/**
@@ -34,10 +34,6 @@ angular.module('rheticus')
 		 */
 		angular.extend(self,{
 			"overlays" : $scope.getOverlays(),
-			// "chl" : $scope.getOverlayParams("chl"),
-			// "sst" : $scope.getOverlayParams("sst"),
-			// "wt" : $scope.getOverlayParams("wt"),
-			// "tur" : $scope.getOverlayParams("tur"),
 			"tem": $scope.getOverlayParams("tem"),
 			"dox": $scope.getOverlayParams("dox"),
 			"sal": $scope.getOverlayParams("sal"),

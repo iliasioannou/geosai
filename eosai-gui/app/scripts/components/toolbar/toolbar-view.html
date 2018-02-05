@@ -15,8 +15,6 @@
                 ng-click="changeLanguage('en')">
                 <img title="{{ 'grFlag' | translate }}" style="margin-left:10px;" src="images/grFlag.png" width="30" height="30" style="cursor: pointer;"
                 ng-click="changeLanguage('gr')">
-                <!--img title="{{ 'frFlag' | translate }}" style="margin-left:10px;" src="images/frFlag.png" width="30" height="30" style="cursor:
-                pointer;" ng-click="changeLanguage('fr')"-->
             </div>
         </div>
         <div style="margin:10px;">
@@ -24,22 +22,6 @@
             <div ng-init="basemapPop.view_osm=true;basemapPop.view_sbm=false" ng-controller="BasemapPopoupCtrl as basemapPop">
                 <div>
                     <input type="radio" ng-checked="basemapPop.view_osm" ng-click="basemapPop.changeBaseLayerOSM()" />OpenStreetMap</div>
-            </div>
-            <div ng-controller="marineServiceCtrl as marine">
-                <div>
-                    <label>{{ 'CatalogSettings' | translate }}</label>
-                    <form>
-                        <button type="button" title="{{ 'CatalogSettings' | translate }}" ng-click="marine.openViewer()">
-                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                        </button>{{ 'catalogHelpSettings' | translate }}</form>
-                </div>
-                <div style="margin-top:10px;">
-                    <label>{{ 'helpSettings' | translate }}</label>
-                    <form>
-                        <button type="button" title="{{ 'helpSettings' | translate }}" ng-click="marine.openHelp()">
-                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-                        </button>{{ 'descriptionHelpSettings' | translate }}</form>
-                </div>
             </div>
         </div>
     </md-sidenav>
