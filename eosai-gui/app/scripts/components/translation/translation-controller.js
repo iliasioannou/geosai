@@ -34,7 +34,7 @@ $translateProvider.translations('en', {
   'tem': 'Sea Water Temperature',
   'dox': 'Dissolved Oxygen',
   'sal': 'Salinity',
-  'swh': 'Sea Surface Waves',
+  'swh': 'Significant Wave Height',
   'cur': 'Currents',
   'currentView':'You are viewing',
   'Type':'Type',
