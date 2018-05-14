@@ -38,29 +38,20 @@
 		"catalog": "./geonetwork",
 		"help": "./pdf/userguide.pdf"
 	},
-	"CHL": {
-		"dailySlider": "CHL",
-		"tenDaysSlider": "CHL10",
-		"monthSlider": "CHL30",
-		"month90Slider": "CHL30P"
+	"TEM": {
+		"dailySlider": "TEM"
 	},
-	"SST": {
-		"dailySlider": "SST",
-		"tenDaysSlider": "SST10",
-		"monthSlider": "SST30",
-		"month90Slider": "SST30P"
+	"DOX": {
+		"dailySlider": "DOX"
 	},
-	"WT": {
-		"dailySlider": "WT",
-		"tenDaysSlider": "WT10",
-		"monthSlider": "WT30",
-		"month90Slider": "WT30P"
+	"SAL": {
+		"dailySlider": "SAL"
 	},
-	"TUR": {
-		"dailySlider": "TUR",
-		"tenDaysSlider": "TUR10",
-		"monthSlider": "TUR30",
-		"month90Slider": "TUR30P"
+	"SWH": {
+		"dailySlider": "SWH"
+	},
+	"CUR": {
+		"dailySlider": "CUR"
 	},
 	"generalSettings" : {
 		"maxDayBeforeTodayHistory" : 5

@@ -38,11 +38,6 @@ angular.module('rheticus')
 		angular.extend(self, {
 			//INSERT HERE YOUR FILTERS
 			"overlays": $scope.getOverlays(),
-			"chl": $scope.getOverlayParams("chl"),
-			"sst": $scope.getOverlayParams("sst"),
-			"wt": $scope.getOverlayParams("wt"),
-			"tur": $scope.getOverlayParams("tur"),
-
 			"tem": $scope.getOverlayParams("tem"),
 			"dox": $scope.getOverlayParams("dox"),
 			"sal": $scope.getOverlayParams("sal"),
@@ -156,7 +151,6 @@ angular.module('rheticus')
 		//WATCH TEM
 		$scope.$watch("overlayForWatch[2].visible", function (value) {
 			if (value && $scope.layerFound.length > 0) {
-				//console.log("attivo CHL: "+$scope.overlayForWatch[2].source.params.LAYERS);
 				//SET MENU PERIOD
 				var i = 0;
 				var trovato = false;
@@ -476,14 +470,8 @@ angular.module('rheticus')
 
 		//UPDATE INTERFACE WITH THE CURRENT DATE AND UPDATE TIME PARAMS IN ALL OVERLAYS
 		$scope.setSlider = function () {
-			//console.log("setSlider");
 			if ($scope.arrayDataTimeCurrent[$scope.currentDate] instanceof Date) {
 				$rootScope.$broadcast("setOverlaysClosure");
-
-				// self.chl.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-				// self.sst.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-				// self.wt.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
-				// self.tur.source.params.TIME=d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 
 				self.tem.source.params.TIME = d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);
 				self.dox.source.params.TIME = d3.time.format("%Y-%m-%d")($scope.arrayDataTimeCurrent[$scope.currentDate]);

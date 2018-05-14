@@ -14,10 +14,11 @@ angular
 		geocoder : @@geocoder,
 		//custom environment configuration
 		marineService : @@marineService,
-		CHL : @@CHL,
-		SST : @@SST,
-		WT : @@WT,
-		TUR : @@TUR,
+		CUR : @@CUR,
+		DOX : @@DOX,
+		TEM: @@TEM,
+		SWH : @@SWH,
+		SAL : @@SAL,
 		layers : @@layers,
 		rheticusAPI : @@rheticusAPI,
 		generalSettings: @@generalSettings
