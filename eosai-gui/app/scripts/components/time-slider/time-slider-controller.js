@@ -101,7 +101,6 @@ angular.module('rheticus')
 		//WATCH DOX
 		$scope.$watch("overlayForWatch[0].visible", function (value) {
 			if (value && $scope.layerFound.length > 0) {
-				//console.log("attivo SST: "+$scope.overlayForWatch[0].source.params.LAYERS);
 				//SET MENU PERIOD
 				var i = 0;
 				var trovato = false;
@@ -126,7 +125,6 @@ angular.module('rheticus')
 		//WATCH SAL
 		$scope.$watch("overlayForWatch[1].visible", function (value) {
 			if (value && $scope.layerFound.length > 0) {
-				//console.log("attivo WT: "+$scope.overlayForWatch[1].source.params.LAYERS);
 				//SET MENU PERIOD
 				var i = 0;
 				var trovato = false;
@@ -175,7 +173,6 @@ angular.module('rheticus')
 		//WATCH SWH
 		$scope.$watch("overlayForWatch[3].visible", function (value) {
 			if (value && $scope.layerFound.length > 0) {
-				//console.log("attivo TUR: "+$scope.overlayForWatch[3].source.params.LAYERS);
 				//SET MENU PERIOD
 				var i = 0;
 				var trovato = false;
@@ -200,7 +197,6 @@ angular.module('rheticus')
 		//WATCH CUR
 		$scope.$watch("overlayForWatch[4].visible", function (value) {
 			if (value && $scope.layerFound.length > 0) {
-				//console.log("attivo TUR: "+$scope.overlayForWatch[3].source.params.LAYERS);
 				//SET MENU PERIOD
 				var i = 0;
 				var trovato = false;
